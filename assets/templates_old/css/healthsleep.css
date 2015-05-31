@@ -1,0 +1,99 @@
+#healthsleep_content {
+	font-size:1.6vh;
+}
+
+.inner_content {
+	width:100%;
+	overflow:auto;
+	padding-top:5vh;
+	padding-bottom:5vh;
+	border-bottom:#CCC 1px solid;
+}
+
+
+.inner_content h2{
+	font-size:2vh;
+}
+
+.inner_content p{
+	
+}
+
+.readmorelink a {
+	color:#999;
+}
+
+.readmorelink a:hover {
+	color:#EB0028;
+}
+
+
+@media all and ( min-width: 1225px ) {
+#main {
+	width:65%;
+	margin: 4vh auto;
+}
+
+.inner_box {
+	height:180px;
+	overflow:hidden;
+}
+
+.inner_left {
+	float:left;
+} 
+
+.inner_content img{
+	width:40%;
+	float:left;
+	margin-right:20px;
+}
+
+
+}
+
+@media all and ( max-width: 1224px ) and ( min-width: 865px ) {
+#main {
+	width:70%;
+	margin: 4vh auto;
+}
+
+	.inner_box {
+	height:110px;
+	overflow:hidden;
+}
+
+.inner_left {
+	float:left;
+} 
+
+.inner_content img{
+	width:40%;
+	float:left;
+	margin-right:20px;
+}
+
+
+
+}
+
+@media all and ( max-width: 864px ) {	
+	#main {
+	width:80%;
+	margin: 4vh auto;
+}	
+	
+	.inner_content img{
+	width:100%;
+	float:left;
+	margin-right:20px;
+}
+
+.inner_box {
+	clear:both;
+	padding-top:2vh;
+	height:180px;
+	overflow:hidden;
+}
+
+}

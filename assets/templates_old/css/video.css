@@ -1,0 +1,74 @@
+#main {
+	margin: 4vh auto;
+}
+
+
+/************************************************************************************
+VIDEO
+*************************************************************************************/
+
+/* make HTML5 video element elastic */
+video {
+	width: 40%;
+	height: auto;
+	float:left;
+	padding-top:1.2vh;
+}
+
+.video_wrapper {
+	width: 100%;
+	margin-top:4vh;
+	padding-bottom:4vh;
+	border-bottom:#CCC 1px solid;
+	overflow:auto;
+}
+
+.video_content h2 {
+	font-size:2vh;
+}
+
+.video_date {
+	padding-top:1vh;
+	text-align:right;
+	color:#999;
+	font-size:1.5vh;
+}
+
+
+@media all 
+and (min-width: 1200px) {
+	#main {
+	width: 65%;
+}
+.video_content {
+	padding-left:3vh;
+	overflow:auto;
+}
+}
+
+@media all
+and (max-width: 1199px)
+and (min-width: 701px)  {
+	#main {
+	width: 80%;
+}
+.video_content {
+	padding-left:3vh;
+	overflow:auto;
+}
+}
+
+@media all
+and (max-width: 700px)  {
+	#main {
+	width: 80%;
+	}
+	
+	video {
+	width: 100%;
+	height: auto;
+	padding-top:1.2vh;
+	padding-bottom:2vh;
+}
+
+}

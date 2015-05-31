@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>APEX USA</title>
+    <meta http-equiv="cleartype" content="on"/>
+
+    <!-- Always force latest IE rendering engine & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <!-- Responsive and mobile friendly stuff -->
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/default.css"/>
+    <link rel="stylesheet" type="text/css" href="css/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css"/>
+    <link rel="stylesheet" type="text/css" href="css/xt.css"/>
+ 	<link rel="stylesheet" type="text/css" href="css/footer.css"/>   
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    
+    <!-- JS -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="js/responsiveslides.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                navigation: true,
+                navigationColor: '#EC0928',
+                scrollingSpeed: 700,
+                animateAnchor: false,
+                controlArrows: false,
+                sectionsColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#F1F1F1', '#FFFFFF'],
+                anchors: ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7']
+            });
+            
+            $('.toggle-footer-btn').click(function() {
+                $(this).html($(this).html() == '+' ? '-' : '+');
+                if($(this).html() == '-') {  
+                    $('.toggle-footer-btn, #footer').animate({
+                        bottom: "+=100"
+                    });
+                }
+                else {
+                    $('.toggle-footer-btn, #footer').animate({
+                        bottom: "-=100"
+                    });
+                }
+                return false;
+            });
+        });
+    </script>   
+</head>
+
+<body style="background-color:#999;">
+    <!-- Navigator -->
+    <header>
+	   <nav id="nav" role="navigation" style="z-index:2;">
+        <a href="#nav" title="Show navigation">Show navigation</a>
+        <a href="#" title="Hide navigation">Hide navigation</a>
+        
+        <div id="logo"><a href="../index.html"><img src="pic/logo.png" /></a></div>
+        
+        <ul>
+            <li id="firstnav"><a href="../devices.html"><b class="apexred">Devices</b></a></li>
+            <li><a href="../masks.html">Masks</a></li>
+            <li>
+                <a href="#" aria-haspopup="true"><span>Where to buy</span></a>
+                <ul>
+                    <li><a href="../promotion.html">Promotion</a></li>
+                    <li><a href="../location.html">Location</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" aria-haspopup="true"><span>Support</span></a>
+                <ul>
+                    <li><a href="../faq.html">FAQ</a></li>
+                    <li><a href="../download.html">Download</a></li>
+                    <li><a href="../video.html">Video</a></li>
+                    <li><a href="../healthsleep.html">Health Sleep</a></li>
+                </ul>
+            </li>
+            <li><a href="../about.html">About Apex</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+        
+        <li id="search">
+        <form method="get" action="/search">
+  		<input name="q" type="text" size="40" placeholder="Search..." />
+		</form>
+        </li>
+        
+        </ul>
+        
+    </nav>
+    </header>
+    
+    <div id="fullpage"  style="position:absolute; z-index:6;">
+        <!-- page 1 -->
+        <div class="section active" id="xt-p1" style="z-index:0;">
+            <img src="pic/products/xt-01.jpg" class="fullbg" alt=""/>
+            <div class="txt" id="xt-p1-txt">
+                <h2>The Everyday CPAP</h2>
+                <h2>Tthat Loves To Travel</h2>
+                <p>The XT is one of the most popular and best reviewed machines the CPAP marketplace has ever seen.  We put this down to its perfect size and weight.  Small and light enough to be your travel machine but sturdy and robust enough to be your everyday CPAP - especially when used with the optional heated humidifier.  With features to suit every need the XT can be the machine for all your life.   Why buy two machines when one will do both jobs?</p>
+            </div>
+        </div>
+        
+        <!-- page 2 -->
+        <div class="section" id="xt-p2" style="z-index:5;">
+            <img src="pic/products/bg.png" class="bg" alt=""/>
+            <div class="pic" id="xt-p2-pic">
+                <img src="pic/products/xt-02.png"/>
+            </div>
+            <div class="txt" id="xt-p2-txt">
+                <h1>Compact</h1>
+                <h1>Size</h1>
+            </div>
+        </div>
+        
+        <!-- page 3 -->
+        <div class="section" id="xt-p3" style="z-index:4;">
+            <div class="txt" id="xt-p3-txt">
+                <h1>Integrated</h1>
+                <h1>Heated</h1>
+                <h1>Humidifier</h1>
+            </div>
+            <div class="pic" id="xt-p3-pic">
+                <img src="pic/products/xt-03-1.png"/>
+            </div>
+            <div class="mask" id="xt-p3-mask">
+                <img src="pic/products/xt-03-2.png"/>
+            </div>
+        </div>
+        
+        <!-- page 4 -->
+        <div class="section" id="xt-p4" style="z-index:3;">
+            <img src="pic/products/xt-04.jpg" class="fullbg" alt=""/>
+            <div class="txt" id="xt-p4-txt">
+                <h1>Ultra Quiet</h1>
+                <h1>Operation</h1>
+            </div>
+        </div>
+        
+        <!-- page 5 -->
+        <div class="section" id="xt-p5" style="z-index:2;">
+            <img src="pic/products/xt-05.jpg" class="fullbg" alt=""/>
+        </div>
+
+        <!-- page 7 -->
+        <div class="section" id="xt-p7" style="z-index:0;">
+            <div class="txt" id="xt-p7-txt">
+                <h2>Specification</h2>
+            </div>
+            <div class="pic" id="xt-p7-pic-1">
+                <img src="pic/products/xt-07-1.png"/>
+            </div>
+            <div class="pic" id="xt-p7-pic-2">
+                <img src="pic/products/xt-07-2.png"/>
+            </div>
+        </div>
+        
+        <!-- page 6 -->
+        <div class="section" id="xt-p6" style="z-index:1;">
+            <div class="txt" id="xt-p6-txt">
+                <h2>Accessories</h2>
+            </div>
+            <div class="pic" id="xt-p6-pic-1">
+                <img src="pic/products/xt-06-1.png"/>
+            </div>
+            <div class="pic" id="xt-p6-pic-2">
+                <img src="pic/products/xt-06-2.png"/>
+            </div>
+            <div class="pic" id="xt-p6-pic-3">
+                <img src="pic/products/xt-06-3.png"/>
+            </div>
+        </div>
+    </div>
+    
+    <!-- footer -->
+    <a href="#" class="toggle-footer-btn">+</a>
+    <div style="clear:both;"></div>
+    <div id="footer" class="footer">
+    	<div class="pd_footer_right">
+
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<!--<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="fa fa-github"></i></a>-->
+
+			</div>
+            
+    	<div class="pd_footer_left">
+            <p class="links">
+                <a href="index.html">Home</a>
+                |
+                <a href="contact.html">Contact Us</a>
+                |
+                <a href="news.html">News</a>
+                |
+                <a href="termofuse.html">Term of use</a>
+                |
+                <a href="privacy.html">Privacy</a>
+            </p>
+            <p class="footercopyright">Copyright ©2015 APEX MEDICAL CORP. All right reserved</p>
+        </div>
+    
+    
+    </div>
+    
+    <script type="text/javascript" async src="http://www.google-analytics.com/ga.js"></script>
+    <script type="text/javascript" href="js/doubletaptogo.js"></script>
+    <script>
+	   $(function() {
+           $('#nav li:has(ul)').doubleTapToGo();
+	   });
+    </script>     
+</body>
+    
+</html>

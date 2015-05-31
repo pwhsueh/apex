@@ -1,0 +1,390 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #252525;
+}
+
+.txt, .pic, .mask {
+    position: absolute;
+	color:#404040;
+	font-weight:500;
+}
+
+h1, h2, h3 {
+		font-weight:500;
+}
+
+img.bg {
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+#xt-p1 img.fullbg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    right: 0;
+    bottom: 0;
+}
+
+#xt-p4 img.fullbg, #xt-p5 img.fullbg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    left: 0;
+    bottom: 0;
+}
+
+@media all and (max-width: 600px) {
+    #xt-p1 img.fullbg {
+        right: -50%;
+        bottom: 0;
+    }
+    
+    #xt-p4 img.fullbg, #xt-p5 img.fullbg {
+        left: -20%;
+        bottom: 0;
+    }
+}
+
+#xt-p2-pic {
+    margin-left: -10%;
+}
+
+.active #xt-p2-pic {
+    margin-left: 0;
+    
+    -webkit-transition: margin-left 1s ease 0.8s;
+    -moz-transition: margin-left 1s ease 0.8s;
+    -ms-transition: margin-left 1s ease 0.8s;
+    -o-transition: margin-left 1s ease 0.8s;
+    transition: margin-left 1s ease 0.8s;
+}
+
+#xt-p3-mask {
+    opacity: 0;
+}
+
+.active #xt-p3-mask{
+    opacity: 1;
+    
+    -webkit-transition: opacity 2s ease 0.8s;
+    -moz-transition: opacity 2s ease 0.8s;
+    -ms-transition: opacity 2s ease 0.8s;
+    -o-transition: opacity 2s ease 0.8s;
+    transition: opacity 2s ease 0.8s;
+}
+
+@media all and (orientation: landscape) {
+    h1 {
+        font-size: 9vh;
+        line-height:10vh; 
+    }
+    
+    h2 {
+        font-size: 5.5vh;
+        line-height: 8vh;
+    }
+    
+    h3 {
+        font-size: 4vh;
+    }
+    
+    p {
+        font-size: 2.5vh;
+        line-height: 4vh;
+    }
+    
+    #xt-p1-txt {
+        z-index: 1;
+        width: 55%;
+        top: 3vh;
+        left: 40%;
+    }
+    
+    #xt-p1-txt h2 {
+        font-size: 5vh;
+        line-height: 6vh;
+    }
+    
+    #xt-p1-txt p{
+        font-size: 2.5vh;
+        line-height: 3vh;
+        margin-top: 2vh;
+    }
+    
+    #xt-p2-pic {
+        width: 55%;
+        left: 0;
+        bottom: 20vh;
+    }
+    
+    #xt-p2-pic img {
+        width: 100%;
+    }
+    
+    #xt-p2-txt {
+        text-align: right;
+        width: 35%;
+        top: 30vh;
+        left: 55%;
+    }
+    
+    #xt-p3-txt {
+        width: 90%;
+        top: 10vh;
+        left: 10%;
+    }
+    
+    #xt-p3-pic {
+        z-index: 0;
+        width: 60%;
+        right: 5%;
+        bottom: 0;
+    }
+    
+    #xt-p3-pic img {
+        width: auto;
+        height: 95vh;
+    }
+    
+    #xt-p3-mask {
+        z-index: 1;
+        width: 60%;
+        right: 5%;
+        bottom: 0;
+    }
+    
+    #xt-p3-mask img {
+        width: auto;
+        height: 95vh;
+    }
+    
+    #xt-p4-txt {
+        width: 80%;
+        top: 5vh;
+        left: 5%;
+    }
+    
+    #xt-p6-txt {
+        text-align: center;
+        width: 100%;
+        top: 5vh;
+    }
+    
+    #xt-p6-pic-1 {
+        position: relative;
+        display: block;
+        float: left;
+        width: 40%;
+        top: 15vh;
+        left: 10%;
+    }
+    
+    
+    #xt-p6-pic-2 {
+        position: relative;
+        display: block;
+        float: left;
+        width: 35%;
+        top: 5vh;
+        left: 15%;
+    }
+   
+
+    #xt-p6-pic-3 {
+        position: relative;
+        display: block;
+        float: left;
+        width: 35%;
+        top: 5vh;
+        left: 15%;
+    }
+    
+	#xt-p6-pic-1 img, #xt-p6-pic-2 img, #xt-p6-pic-3 img {
+        width: 100%;
+    }
+    
+    #xt-p7-txt {
+        text-align: left;
+        width: 90%;
+        top: 5vh;
+        left: 10%;
+    }
+    
+    #xt-p7-pic-1 {
+        float: left;
+        left: 10%;
+        bottom: 2vh;
+    }
+    
+    #xt-p7-pic-1 img {
+        width: auto;
+        height: 80vh;
+    }
+    
+    #xt-p7-pic-2 {
+        float: right;
+        right: 10%;
+        bottom: 2vh;
+    }
+    
+    #xt-p7-pic-2 img {
+        width: auto;
+        height: 90vh;
+    }
+}
+
+@media all and (orientation: portrait) {
+    h1 {
+        font-size: 7vh;
+        line-height: 8vh;
+    }
+    
+    h2 {
+        font-size: 4.5vh;
+        line-height: 7vh;
+    }
+    
+    h3{
+        font-size: 3vh;
+    }
+    
+    p {
+        font-size: 2vh;
+        line-height: 2.5vh;
+    }
+    
+    #xt-p1-txt {
+        text-align: center;
+        z-index: 1;
+        width: 80%;
+        top: 3vh;
+        left: 10%;
+    }
+    
+    #xt-p1-txt h2 {
+        font-size: 4.5vh;
+        line-height: 5vh;
+    }
+    
+    #xt-p1-txt p{
+        font-size: 2vh;
+        line-height: 2.5vh;
+        margin-top: 1vh;
+    }
+    
+    #xt-p2-pic {
+        width: 100%;
+        left: -25%;
+        bottom: 20vh;
+    }
+    
+    #xt-p2-pic img {
+        width: 100%;
+    }
+    
+    #xt-p2-txt {
+        text-align: center;
+        width: 100%;
+        top: 10vh;
+    }
+    
+    #xt-p3-txt {
+        text-align: center;
+        width: 100%;
+        top: 5vh;
+    }
+    
+    #xt-p3-pic {
+        text-align: center;
+        z-index: 0;
+        width: 140%;
+        left: -20%;
+        bottom: 0;
+    }
+    
+    #xt-p3-pic img {
+        width: auto;
+        height: 65vh;
+    }
+    
+    #xt-p3-mask {
+        text-align: center;
+        z-index: 1;
+        width: 140%;
+        left: -20%;
+        bottom: 0;
+    }
+    
+    #xt-p3-mask img {
+        width: auto;
+        height: 65vh;
+    }
+    
+    #xt-p4-txt {
+        text-align: center;
+        width: 100%;
+        top: 5vh;
+    }
+    
+    #xt-p6-txt {
+        text-align: center;
+        width: 100%;
+        top: 5vh;
+    }
+    
+    #xt-p6-pic-1 {
+        position: relative;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+    
+    #xt-p6-pic-1 img {
+         width: 100%;
+    }
+    
+    #xt-p6-pic-2, #xt-p6-pic-3 {
+        position: relative;
+        display: block;
+        float: left;
+        width: 45%;
+        top: 5vh;
+    }
+    
+    #xt-p6-pic-2 {
+        left: 5%;
+    }
+    
+    #xt-p6-pic-2 img, #xt-p6-pic-3 img {
+        width: 100%;
+    }
+    
+    #xt-p7-txt {
+        text-align: center;
+        width: 100%;
+        top: 5vh;
+    }
+    
+    #xt-p7-pic-1 {
+        display: none;
+    }
+    
+    #xt-p7-pic-2 {
+        text-align: center;
+        width: 100%;
+        height: auto;
+        top: 15vh;
+    }
+    
+    #xt-p7 img {
+        width: 100%;
+    }
+}

@@ -1,0 +1,472 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #231f20;
+}
+
+.txt, .pic, .mask {
+    position: absolute;
+}
+
+img.bg {
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+#ich-p1 img.fullbg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+#ich-p5 img.fullbg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    right: 0;
+    bottom: 0;
+}
+
+#ich-p2-txt {
+    color: #ffffff;
+    margin-left: -100%;
+}
+
+.active #ich-p2-txt {
+    margin-left: 0;
+    
+    -webkit-transition: margin-left 0.4s ease 1.7s;
+    -moz-transition: margin-left 0.4s ease 1.7s;
+    -ms-transition: margin-left 0.4s ease 1.7s;
+    -o-transition: margin-left 0.4s ease 1.7s;
+    transition: margin-left 0.4s ease 1.7s;
+}
+
+#ich-p2-mask {
+    opacity: 0;
+}
+
+.active #ich-p2-mask {
+    opacity: 1;
+    
+    -webkit-transition: opacity 1.5s ease 2.5s;
+    -moz-transition: opacity 1.5s ease 2.5s;
+    -ms-transition: opacity 1.5s ease 2.5s;
+    -o-transition: opacity 1.5s ease 2.5s;
+    transition: opacity 1.5s ease 2.5s;
+}
+
+#ich-p3-mask {
+    opacity: 0;
+}
+
+.active #ich-p3-mask{
+    opacity: 0.7;
+    
+    -webkit-transition: opacity 0.1s ease 1s;
+    -moz-transition: opacity 0.1s ease 1s;
+    -ms-transition: opacity 0.1s ease 1s;
+    -o-transition: opacity 0.1s ease 1s;
+    transition: opacity 0.1s ease 1s;
+}
+
+@-webkit-keyframes blink {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@-moz-keyframes blink {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@-ms-keyframes blink {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@-o-keyframes blink {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes blink {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.active #ich-p4-mask{
+    -webkit-animation: blink 0.5s infinite;
+    -moz-animation: blink 0.5s infinite;
+    -ms-animation: blink 0.5s infinite;
+    -o-animation: blink 0.5s infinite;
+    animation: blink 0.5s infinite;
+}
+
+@media all and (orientation: landscape) {
+    h1 {
+        font-size: 8vh;
+        line-height:8vh; 
+    }
+    
+    h2 {
+        font-size: 5.5vh;
+        line-height: 8vh;
+    }
+    
+    h3 {
+        font-size: 4vh;
+    }
+    
+    p {
+        font-size: 2.5vh;
+        line-height: 4vh;
+    }
+    
+    #ich-p1-txt {
+        z-index: 1;
+        top: 15vh;
+        left: 10%;
+    }
+    
+    #ich-p1-txt h1 {
+        width: 80%;
+    }
+    
+    #ich-p1-txt p {
+        width: 40%;
+        margin-top: 5vh;
+    }
+    
+    #ich-p2-txt {
+        z-index: 2;
+        text-align: right;
+        width: 50%;
+        top: 25vh;
+        left: 0;
+    }
+    
+    #ich-p2-pic {
+        z-index: 0;
+        width: 50%;
+        right: 0;
+        bottom: 0;
+    }
+    
+    #ich-p2-mask {
+        z-index: 1;
+        width: 50%;
+        right: 0;
+        bottom: 0;
+    }
+    
+    #ich-p2 img {
+        width: auto;
+        height: 90vh;
+        float: right;
+    }
+    
+    #ich-p3-pic {
+        z-index: 0;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+    
+    #ich-p3-mask {
+        z-index: 1;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+    
+    #ich-p3 img {
+        width: auto;
+        height: 100vh;
+        float: left;
+    }
+    
+    #ich-p3-txt {
+        text-align: right;
+        width: 95%;
+        top: 25vh;
+    }
+    
+    #ich-p4-pic {
+        z-index: 0;
+        width: 65%;
+        top: 0;
+        left: 5%;
+    }
+    
+    #ich-p4-mask {
+        z-index: 1;
+        width: 70%;
+        top: 0;
+        left: 5%;
+    }
+    
+    #ich-p4 img {
+        width: auto;
+        height: 95vh;
+    }
+    
+    #ich-p4-txt {
+        text-align: right;
+        z-index: 2;
+        width: 90%;
+        top: 45vh;
+    }
+    
+    #ich-p6-txt {
+        text-align: center;
+        width: 100%;
+        top: 5vh;
+    }
+    
+    #ich-p6-pic-1 {
+        position: relative;
+        display: block;
+        float: left;
+        width: 40%;
+        top: 5vh;
+        left: 5%;
+    }
+    
+    #ich-p6-pic-1 img {
+        width: auto;
+        height: 75vh;
+    }
+    
+    #ich-p6-pic-2 {
+        position: relative;
+        display: block;
+        float: left;
+        width: 35%;
+        top: 5vh;
+        left: 20%;
+    }
+    
+    #ich-p6-pic-2 img {
+        width: auto;
+        height: 35vh;
+    }
+
+    #ich-p6-pic-3 {
+        position: relative;
+        display: block;
+        float: left;
+        width: 35%;
+        top: 5vh;
+        left: 20%;
+    }
+    
+    #ich-p6-pic-3 img {
+        width: auto;
+        height: 35vh;
+    }
+
+    #ich-p7-txt {
+        text-align: center;
+        width: 100%;
+        top: 5vh;
+    }
+    
+    #ich-p7-pic-1 {
+        float: left;
+        left: 10%;
+        bottom: 2vh;
+    }
+    
+    #ich-p7-pic-2 {
+        float: right;
+        right: 10%;
+        bottom: 2vh;
+    }
+    
+    #ich-p7 img {
+        width: auto;
+        height: 80vh;
+    }
+}
+
+@media all and (orientation: portrait) {
+    h1 {
+        font-size: 5vh;
+        line-height: 5vh;
+    }
+    
+    h2 {
+        font-size: 4.5vh;
+        line-height: 7vh;
+    }
+    
+    h3{
+        font-size: 3vh;
+    }
+    
+    p {
+        font-size: 2vh;
+        line-height: 2.5vh;
+    }
+    
+    #ich-p1-txt {
+        text-align: center;
+        z-index: 1;
+        width: 75%;
+        top: 5%;
+        left: 12.5%;
+    }
+    
+    #ich-p1-txt p {
+        margin-top: 5%;
+    }
+    
+    #ich-p2-txt {
+        z-index: 2;
+        text-align: center;
+        width: 100%;
+        top: 15vh;
+    }
+    
+    #ich-p2-pic {
+        z-index: 0;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+    }
+    
+    #ich-p2-mask {
+        z-index: 1;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+    }
+    
+    #ich-p2 img {
+        width: auto;
+        height: 60vh;
+        float: right;
+    }
+    
+    #ich-p3-pic {
+        z-index: 0;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+    
+    #ich-p3-mask {
+        z-index: 1;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+    
+    #ich-p3 img {
+        width: auto;
+        height: 70vh;
+        float: left;
+    }
+    
+    #ich-p3-txt {
+        text-align: center;
+        width: 100%;
+        top: 10vh;
+    }
+    
+    #ich-p4-pic {
+        z-index: 0;
+        width: 100%;
+        bottom: 10vh;
+    }
+    
+    #ich-p4-mask {
+        z-index: 1;
+        width: 100%;
+        bottom: 10vh;
+    }
+    
+    #ich-p4 img {
+        width: 100%;
+        height: auto;
+    }
+    
+    #ich-p4-txt {
+        text-align: center;
+        z-index: 2;
+        width: 100%;
+        top: 5vh;
+    }
+    
+    #ich-p6-txt {
+        text-align: center;
+        width: 100%;
+        top: 5vh;
+    }
+    
+    #ich-p6-pic-1 {
+        position: relative;
+        display: block;
+        text-align: center;
+        width: 100%;
+        top: 5vh;
+    }
+    
+    #ich-p6-pic-1 img {
+        width: auto;
+        height: 35vh;
+    }
+    
+    #ich-p6-pic-2 {
+        position: relative;
+        display: block;
+        text-align: center;
+        width: 100%;
+        top: 5vh;
+    }
+    
+    #ich-p6-pic-2 img {
+        width: auto;
+        height: 20vh;
+    }
+
+    #ich-p6-pic-3 {
+        position: relative;
+        display: block;
+        text-align: center;
+        width: 100%;
+        top: 5vh;
+    }
+    
+    #ich-p6-pic-3 img {
+        width: auto;
+        height: 20vh;
+    }
+
+    #ich-p7-txt {
+        text-align: center;
+        width: 100%;
+        top: 5vh;
+    }
+    
+    #ich-p7-pic-1 {
+        display: none;
+    }
+    
+    #ich-p7-pic-2 {
+        text-align: center;
+        width: 100%;
+        height: auto;
+        top: 15vh;
+    }
+    
+    #ich-p7 img {
+        width: 100%;
+    }
+}

@@ -1,0 +1,125 @@
+.maskcata{
+	text-align:center;
+}
+	
+.maskcata h1{
+	font-family: Geneva, sans-serif;
+	text-transform:uppercase;
+}
+
+.maskcata h2 {
+	font-size:3.6vh;
+	font-weight:300;
+}
+
+.maskcata p {
+	text-align:left;
+}
+
+.hintnotice {
+	padding-top:8vh;
+	color:#EB0028;
+	font-weight:600;
+}
+
+
+.linkerbutton a {
+	color:#EB0028;
+	width:100%;
+	/*background:#fff;*/
+	text-align:center;
+	border: 2px solid #EB0028;
+    border-radius: 25px;
+	height:3vh;
+	padding:0.3vh 1.5vh 0.3vh 1.5vh;
+	font-size:1.5vh;
+}
+
+.linkerbutton a:hover {
+	color:#fff;
+    background:#EB0028;
+	border: 1px solid #EB0028;
+}
+
+
+@media all and (orientation: landscape) {
+	.cataimage {
+	width:45%;
+}
+
+.maskcata h1{
+	font-size:6vh;
+	font-weight:600;
+	line-height:6vh;
+}
+
+.maskcata h2 {
+	font-size:3.6vh;
+	font-weight:300;
+	padding-bottom:4vh;
+}
+
+.maskcata p {
+	width:60%;
+	padding-top:3vh;
+	font-size:2vh;
+	line-height:3vh;
+	margin-left:20%;
+}
+
+.hintnotice {
+	padding-top:8vh;
+}
+
+}
+
+@media all and (orientation: portrait) {
+	.cataimage {
+	width:100%;
+}
+
+.maskcata h1{
+	font-size:4vh;
+	font-weight:600;
+	line-height:6vh;
+}
+
+.maskcata h2 {
+	font-size:2.5vh;
+	font-weight:300;
+	padding-bottom:10vh;
+}
+
+.maskcata p {
+	width:90%;
+	padding-top:3vh;
+	font-size:2vh;
+	line-height:3vh;
+	margin-left:5%;
+}
+
+.hintnotice {
+	padding-top:5vh;	
+}
+
+.linkerbutton {
+	margin-top:3vh;
+}
+
+}
+
+/*****************************
+	mask cata page
+*******************************/
+
+#mask_cata1 {
+}
+
+#mask_cata2 {	
+}
+
+#mask_cata3 {
+}
+
+#mask_cata4 {
+}
