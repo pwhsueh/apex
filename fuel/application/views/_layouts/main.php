@@ -76,9 +76,9 @@
 		}
 	?>
 
-	<?php if (!isset($not_show_footer) || !$not_show_footer): ?>
+	<?php //if (!isset($not_show_footer) || !$not_show_footer): ?>
 		<?php $this->load->view("_blocks/$lang_code/_footer")?>
-	<?php endif ?>
+	<?php //endif ?>
 	
 
  <!-- JS -->
