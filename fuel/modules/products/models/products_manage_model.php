@@ -12,7 +12,7 @@ class Products_manage_model extends MY_Model {
 
 	public function get_total_rows($filter="")
 	{
-		$sql = @"SELECT COUNT(*) AS total_rows FROM mod_products a left join mod_code b on a.serial_key = b.code_id $filter ";
+		$sql = @"SELECT COUNT(*) AS total_rows FROM mod_products a left join mod_code b on a.type_id = b.code_id $filter ";
 		$query = $this->db->query($sql);
 
 		if($query->num_rows() > 0)
@@ -27,8 +27,8 @@ class Products_manage_model extends MY_Model {
 
 	public function get_products_list($dataStart, $dataLen, $filter="")
 	{
-		$sql = @"SELECT a.*,b.code_name FROM mod_products a left join mod_code b on a.serial_key = b.code_id
- 		$filter  ORDER BY `serial_key` DESC ,`prod_order` LIMIT $dataStart, $dataLen";
+		$sql = @"SELECT a.*,b.code_name FROM mod_products a left join mod_code b on a.type_id = b.code_id
+ 		$filter  ORDER BY `type_id` DESC ,`prod_order` LIMIT $dataStart, $dataLen";
 	
 		$query = $this->db->query($sql);
 
@@ -61,27 +61,35 @@ class Products_manage_model extends MY_Model {
 	public function insert($insert_data)
 	{
 		$sql = @"INSERT INTO mod_products (
+											type_id,
 											title, 
-											abstract,
 											sub_title, 
-											descript,   
-											detail,
-											serial_key,
+											section1,   
+											section2,
+											section3,
+											section4,   
+											section5,
+											section6,
+											section7,
+											section8,
 											lang,
-											level_id	,
 											prod_order										 
 										) 
-				VALUES ( ?, ?, ?, ?, ?,?,?, ?,?)"; 
+				VALUES ( ?, ?, ?, ?, ?,?,?, ?,?,?,?,?)"; 
 
 		$para = array(
+				$insert_data['type_id'], 
 				$insert_data['title'], 
-				$insert_data['abstract'],
 				$insert_data['sub_title'],
-				$insert_data['descript'],  
-				$insert_data['detail'],
-				$insert_data['serial_key'],
+				$insert_data['section1'],  
+				$insert_data['section2'],
+				$insert_data['section3'],
+				$insert_data['section4'],
+				$insert_data['section5'],
+				$insert_data['section6'],
+				$insert_data['section7'],
+				$insert_data['section8'],
 				$insert_data['lang'],
-				$insert_data['level_id'],
 				$insert_data['prod_order']
 			);
 		$success = $this->db->query($sql, $para);
@@ -96,37 +104,38 @@ class Products_manage_model extends MY_Model {
 
 	public function update($update_data)
 	{ 
-		$sql = @"UPDATE mod_products SET `title` 	= ?,
-										abstract 	= ?, 
+		$sql = @"UPDATE mod_products SET 
+										`type_id` 	= ?,
+										`title` 	= ?, 
 										sub_title = ?, 
-										descript = ?, 
-										img1 = ?, 
-										img2	= ?, 
-										img3	= ?, 
-										img4	= ?, 
-										category_url	= ?, 
-										detail	= ?, 
-										serial_key	= ?, 
+										section1 = ?, 
+										section2 = ?, 
+										section3 = ?, 
+										section4 = ?, 
+										section5 = ?, 
+										section6 = ?, 
+										section7 = ?, 
+										section8 = ?, 									
 										lang	= ?,
-										level_id = ?,
-										prod_order = ?
+										prod_order = ?,
+										img = ?
 									 
 				WHERE id = ?";
 		$para = array(
+				$update_data['type_id'], 
 				$update_data['title'], 
-				$update_data['abstract'],
 				$update_data['sub_title'],
-				$update_data['descript'],
-				$update_data['img1'],
-				$update_data['img2'],
-				$update_data['img3'],
-				$update_data['img4'],
-				$update_data['category_url'],
-				$update_data['detail'],
-				$update_data['serial_key'],
+				$update_data['section1'],
+				$update_data['section2'],
+				$update_data['section3'],
+				$update_data['section4'],
+				$update_data['section5'],
+				$update_data['section6'],
+				$update_data['section7'],
+				$update_data['section8'],
 				$update_data['lang'],
-				$update_data['level_id'],
 				$update_data['prod_order'],
+				$update_data['img'],
 				$update_data['id']
 			);
 		$success = $this->db->query($sql, $para);
@@ -142,19 +151,10 @@ class Products_manage_model extends MY_Model {
 
 	public function update_file($update_data)
 	{
-		$sql = @"UPDATE mod_products SET  img1    = ?, 
-										img2	= ?, 
-										img3	= ?, 
-										img4	= ?,
-										category_url = ?
-									 
+		$sql = @"UPDATE mod_products SET  img    = ?	
 				WHERE id = ?";
 		$para = array( 
-				$update_data['img1'],
-				$update_data['img2'],
-				$update_data['img3'],
-				$update_data['img4'], 
-				$update_data['category_url'],
+				$update_data['img'],
 				$update_data['id']
 			);
 		$success = $this->db->query($sql, $para);

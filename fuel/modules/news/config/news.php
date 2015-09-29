@@ -13,9 +13,12 @@ $config['nav']['news'] = array(
 'news/lists?type=644&cate=sup'		=> 'FAQ-Masks',
 'news/lists?type=641&cate=sup'		=> 'Download-Catalogue',
 'news/lists?type=645&cate=sup'		=> 'Download-Manual',
+'news/lists?type=655&cate=sup'		=> 'Download-Software',
 'news/lists?type=642&cate=sup'		=> 'Video',
 'news/lists?type=643&cate=sup'		=> 'Health Sleep',
-'news/lists?type=646'		=> 'Promotion'
+'news/lists?type=646'		=> 'Promotion',
+'news/lists?type=648'		=> 'Dealers',
+'news/lists?type=647'		=> 'Partners'
 );
 
 // deterines whether to use this configuration below or the database for controlling the blogs behavior

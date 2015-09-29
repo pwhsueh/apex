@@ -268,6 +268,7 @@
 			crossDomain: false,
 			cache: false,
 			success: function(data, textStatus, jqXHR){
+				console.log(data);
 				var data_json=jQuery.parseJSON(data);
 				console.log(data_json);
 				$j( "#dialog-confirm" ).dialog( "close" );

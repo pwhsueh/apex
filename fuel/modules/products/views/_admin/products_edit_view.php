@@ -36,115 +36,113 @@
 									<?php endforeach;?>
 									<?php endif;?>
 								</select>
+								<input type="hidden" name="type_name" value="<?php echo $type_name ?>" />
 							</div>
 						</div>	  
+						<?php if (isset($type)): ?>
 						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">系列</label>
-							<div class="col-sm-4">
-								<select id="series_1">
-									 <option value="Medical">Medical</option>
-									 <option value="DENTAL">DENTAL</option>
-									 <option value="LABORATORY">LABORATORY</option>
-								</select>
-								<select name="series_2" id="series_2"> 
-								</select>
-								<select name="series_3" id="series_3"> 
-								</select>
-								<select name="series_4" id="series_4"> 
-								</select>
+							<label class="col-sm-2 col-sm-2 control-label">Type</label>
+							<div class="col-sm-4">		
+								<select name="type_id">						
+								<?php foreach ($type as $key => $value): ?>
+                                     <option value="<?php echo $value->code_id ?>" <?php if ($product->type_id == $value->code_id): ?>
+									selected
+								<?php endif ?>><?php echo $value->code_name ?></option>
+								<?php endforeach ?>	
+								</select>							
 							</div>
-						</div>	   
+						</div>	
+						<?php else: ?>
+							<input type="hidden" name="type_id" value="656" />
+						<?php endif ?>   
 						<div class="form-group">
 							<label class="col-sm-2 col-sm-2 control-label">Title</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="title" value='<?php echo $product->title ?>' /> 
 							</div>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label class="col-sm-2 col-sm-2 control-label">Abstract</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="abstract" value='<?php echo $product->abstract ?>' /> 
 							</div>
-						</div>
+						</div> -->
 						<div class="form-group">
 							<label class="col-sm-2 col-sm-2 control-label">Sub title</label>
 							<div class="col-sm-4"> 
 								<input type="text" class="form-control" name="sub_title" value='<?php echo $product->sub_title ?>' /> 
 							</div>
 						</div>	
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label class="col-sm-2 col-sm-2 control-label">Descript</label>
 							<div class="col-sm-4"> 
 								<textarea class="form-control" rows="8" id="descript" name="descript"><?php echo htmlspecialchars_decode($product->descript) ?></textarea>
 							</div>
-						</div>					  
+						</div>		 -->			  
 						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Image 1(425*425)</label>
+							<label class="col-sm-2 col-sm-2 control-label">Section 1</label>
 							<div class="col-sm-4">
-								<input type="file" class="form-control" name="img1" value="">  
-								<input type="hidden" value="<?php echo $product->img1; ?>" name="exist_img1" />	
-								<?php if (isset($product->img1) && !empty($product->img1)): ?>
-									<img src="<?php echo site_url()."assets/".$product->img1; ?>" />
-									<input type="checkbox" name="img1_delete" />刪除
-								<?php endif ?> 
-							</div>
-						</div>					  
-						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Image 2(425*425)</label>
-							<div class="col-sm-4">
-								<input type="file" class="form-control" name="img2" value="">  
-								<input type="hidden" value="<?php echo $product->img2; ?>" name="exist_img2" />	
-								<?php if (isset($product->img2) && !empty($product->img2)): ?>
-									<img src="<?php echo site_url()."assets/".$product->img2; ?>" />
-									<input type="checkbox" name="img2_delete" />刪除
-								<?php endif ?> 
-							</div>
-						</div>						  
-						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Image 3(425*425)</label>
-							<div class="col-sm-4">
-								<input type="file" class="form-control" name="img3" value="">  
-								<input type="hidden" value="<?php echo $product->img3; ?>" name="exist_img3" />	
-								<?php if (isset($product->img3) && !empty($product->img3)): ?>
-									<img src="<?php echo site_url()."assets/".$product->img3; ?>" />
-									<input type="checkbox" name="img3_delete" />刪除
-								<?php endif ?> 
-							</div>
-						</div>						  
-						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Image 4(425*425)</label>
-							<div class="col-sm-4">
-								<input type="file" class="form-control" name="img4" value="">  
-								<input type="hidden" value="<?php echo $product->img4; ?>" name="exist_img4" />	
-								<?php if (isset($product->img4) && !empty($product->img4)): ?>
-									<img src="<?php echo site_url()."assets/".$product->img4; ?>" />
-									<input type="checkbox" name="img4_delete" />刪除
-								<?php endif ?> 
-							</div>
-						</div>		
-						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Category file</label>
-							<div class="col-sm-4"> 
-								<input type="file" class="form-control" name="category_url" value="">  
-								<input type="hidden" value="<?php echo $product->category_url; ?>" name="exist_category_url" />	
-								<?php if (isset($product->category_url) && !empty($product->category_url)): ?> 
-									<a href="<?php echo site_url()."assets/".$product->category_url; ?>" target="_blank" >Category file</a>
-									<input type="checkbox" name="category_url_delete" />刪除
-								<?php endif ?> 
+								<textarea class="ckeditor" rows="8" id="section1" name="section1"><?php echo htmlspecialchars_decode($product->section1) ?></textarea>
 							</div>
 						</div>	
 						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Detail</label>
-							<div class="col-sm-4"> 
-								<textarea class="form-control" rows="8" id="detail" name="detail"><?php echo htmlspecialchars_decode($product->detail) ?></textarea>
+							<label class="col-sm-2 col-sm-2 control-label">Section 2</label>
+							<div class="col-sm-4">
+								<textarea class="ckeditor" rows="8" id="section2" name="section2"><?php echo htmlspecialchars_decode($product->section2) ?></textarea>
 							</div>
 						</div>			
+						<div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Section 3</label>
+							<div class="col-sm-4">
+								<textarea class="ckeditor" rows="8" id="section3" name="section3"><?php echo htmlspecialchars_decode($product->section3) ?></textarea>
+							</div>
+						</div>					  
+						<div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Section 4</label>
+							<div class="col-sm-4">
+								<textarea class="ckeditor" rows="8" id="section4" name="section4"><?php echo htmlspecialchars_decode($product->section4) ?></textarea>
+							</div>
+						</div>	
+						<div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Section 5</label>
+							<div class="col-sm-4">
+								<textarea class="ckeditor" rows="8" id="section5" name="section5"><?php echo htmlspecialchars_decode($product->section5) ?></textarea>
+							</div>
+						</div>			
+						<div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Section 6</label>
+							<div class="col-sm-4">
+								<textarea class="ckeditor" rows="8" id="section6" name="section6"><?php echo htmlspecialchars_decode($product->section6) ?></textarea>
+							</div>
+						</div>			
+						<div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Section 7</label>
+							<div class="col-sm-4">
+								<textarea class="ckeditor" rows="8" id="section7" name="section7"><?php echo htmlspecialchars_decode($product->section7) ?></textarea>
+							</div>
+						</div>			
+						<div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Section 8</label>
+							<div class="col-sm-4">
+								<textarea class="ckeditor" rows="8" id="section8" name="section8"><?php echo htmlspecialchars_decode($product->section8) ?></textarea>
+							</div>
+						</div>						
 						<div class="form-group">
 							<label class="col-sm-2 col-sm-2 control-label">順序</label>
 							<div class="col-sm-4"> 
 								<input type="text" class="form-control" id="prod_order" name="prod_order" value="<?php echo $product->prod_order ?>">
-								<input type="hidden" name="prod_ori_order" value="<?php echo $product->prod_order ?>" /> 
-								目前已有<span id="total_count"></span>筆
+								<input type="hidden" name="prod_ori_order" value="<?php echo $product->prod_order ?>" />  
+							</div>
+						</div>			  
+						<div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Image</label>
+							<div class="col-sm-4">
+								<input type="file" class="form-control" name="img" value="">  
+								<input type="hidden" value="<?php echo $product->img; ?>" name="exist_img" />	
+								<?php if (isset($product->img) && !empty($product->img)): ?>
+									<img src="<?php echo site_url()."assets/".$product->img; ?>" />
+									<input type="checkbox" name="img_delete" />刪除
+								<?php endif ?> 
 							</div>
 						</div>		
 						<div class="form-group">
@@ -168,135 +166,11 @@
 	function aHover(url)
 	{
 		location.href = url;
-	}
-
-	function get_order(){
-
-   		   $.ajax({
-                url: '<?php echo site_url(); ?>' + 'fuel/products/get_prod_order/' + $("#lang").val() + '/' + $("#series_4").val() ,
-                cache: false
-		        }).done(function (data) {            
-	                var obj = $.parseJSON(data);
-	                if (obj != null) {	     
-	                	// console.log(obj.total_rows);
-						$("#total_count").text(obj.total_rows-1);
-	                }
-			});
-		 
-	}
+	} 
 
 	jQuery(document).ready(function($) {
  
- 		
-
-		$("#lang").change(function() { 
-  		   $('#series_2').find('option').remove().end();
-  		   $('#series_3').find('option').remove().end();
-  		   $('#series_4').find('option').remove().end(); 
-  		   $("#series_1").trigger('change'); 
-		});
-	 
-		$("#series_1").change(function() { 
-  		   $('#series_2').find('option').remove().end();
-  		   $('#series_3').find('option').remove().end();
-  		   $('#series_4').find('option').remove().end();
-  		    console.log('<?php echo site_url(); ?>' + 'fuel/products/series/'  + $(this).val() + '/' +$("#lang").val() + '/-1');
-		   $.ajax({
-                url: '<?php echo site_url(); ?>' + 'fuel/products/series/' + $(this).val() + '/' +$("#lang").val() + '/-1',
-                cache: false
-		        }).done(function (data) {            
-	                var obj = $.parseJSON(data);
-	                if (obj != null) {	                	
-						for (var i = 0 ;i<obj.length;i++) { 
-		   					$('#series_2').append(
-						        $("<option></option>").text(obj[i].code_name).val(obj[i].code_id)
-						   );
-						};
-						<?php if (isset($series_2)): ?>
-							$("#series_2").val('<?php echo $series_2 ?>');
-							$("#series_2").trigger('change'); 
-						<?php endif ?>
-					   
-	                }
-				});
-			});
-
-		$("#series_2").change(function() {  
-  		   $('#series_3').find('option').remove().end();
-  		   $('#series_4').find('option').remove().end();
-  		    console.log('<?php echo site_url(); ?>' + 'fuel/products/series/' + $("#series_1").val() + '/' +$("#lang").val() + '/' + $(this).val());
-		   $.ajax({
-                url: '<?php echo site_url(); ?>' + 'fuel/products/series/' + $("#series_1").val() + '/' +$("#lang").val() + '/' + $(this).val(),
-                cache: false
-		        }).done(function (data) {            
-	                var obj = $.parseJSON(data);
-	                if (obj != null) {	
-	                	for (var i = 0 ;i<obj.length;i++) { 
-		   					$('#series_3').append(
-						        $("<option></option>").text(obj[i].code_name).val(obj[i].code_id)
-						   );
-						};
-						<?php if (isset($series_3)): ?>
-							$("#series_3").val('<?php echo $series_3 ?>');
-							$("#series_3").trigger('change'); 
-						<?php endif ?>
-	                }					
-				});
-			});
-
-		$("#series_3").change(function() {   
-  		   $('#series_4').find('option').remove().end();
-  		   console.log('<?php echo site_url(); ?>' + 'fuel/products/series/' + $("#series_1").val() + '/' +$("#lang").val() + '/' + $(this).val());
-		   $.ajax({
-                url: '<?php echo site_url(); ?>' + 'fuel/products/series/' + $("#series_1").val() + '/' +$("#lang").val() + '/' + $(this).val(),
-                cache: false
-		        }).done(function (data) {            
-	                var obj = $.parseJSON(data);
-	                if (obj != null) {	                	
-						for (var i = 0 ;i<obj.length;i++) { 
-		   					$('#series_4').append(
-						        $("<option></option>").text(obj[i].code_name).val(obj[i].code_id)
-						   ); 
-						};
-						
-						<?php if (isset($series_4)): ?>
-							$("#series_4").val('<?php echo $series_4 ?>');
-							$("#series_4").trigger('change');
-							get_order(); 
-							// alert('<?php echo site_url(); ?>' + 'fuel/products/get_prod_order/' + $("#lang").val() + '/' + $("#series_4").val());
-						<?php endif ?>
-	                }
-				});
-			});
-
-		
-		$("#series_1").val('<?php echo $series_1 ?>');
-		$("#series_1").trigger('change');
-
-		var config =
-            {
-                height: 380,
-                width: 850,
-                linkShowAdvancedTab: false,
-                scayt_autoStartup: false,
-                enterMode: Number(2),
-                toolbar_Full: [
-                				[ 'Styles', 'Format', 'Font', 'FontSize', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ],
-                				['Bold', 'Italic', 'Underline', '-', 'NumberedList', 'BulletedList'],
-                                ['Link', 'Unlink'], ['Undo', 'Redo', '-', 'SelectAll'], [ 'TextColor', 'BGColor' ],['Checkbox', 'Radio', 'Image' ], ['Source']
-                              ]
-
-            };
-		$( 'textarea#descript' ).ckeditor(config); 
-		$( 'textarea#detail' ).ckeditor(config); 
-
-		
-
-		$("#prod_order").blur(function() {   
-   		  	// if ($(this).val() > $("#total_count").text()) {
-   		  	// 	$(this).val($("#total_count").text());
-   		  	// };
-		});
+ 		 
 
 	});
 </script>

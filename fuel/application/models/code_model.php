@@ -87,6 +87,10 @@ class Code_model extends CI_Model {
         }
     }
 
+    public  function get_mask_menu(){
+        return $this->get_series_sub_detail('657');
+    }
+
     public function get_code_info($codekind_key,$code_key){
         $sql = @"select * from mod_code where codekind_key='$codekind_key' and code_key='$code_key' order by code_value3 ";
         $query = $this->db->query($sql);
@@ -96,6 +100,15 @@ class Code_model extends CI_Model {
             $result = $query->result();
 
             return $result;
+        }
+    }
+
+    public function get_feature_photo($code_key){
+         $result = $this->get_code_info('FeaturePhoto',$code_key);
+         
+        if(sizeof($result)>0)
+        {
+            return $result[0]->img;
         }
     }
 
@@ -111,8 +124,8 @@ class Code_model extends CI_Model {
     //     }
     // }
 
-    public function get_products_list($serial_key){
-        $sql = @"select * from mod_products where serial_key  = '$serial_key' order by `prod_order` ";
+    public function get_products_list($type_id){
+        $sql = @"select * from mod_products where type_id  = '$type_id' order by `prod_order` ";
         $query = $this->db->query($sql);
         //echo $sql;exit;
         if($query->num_rows() > 0)

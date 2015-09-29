@@ -1,52 +1,174 @@
-<?php
- 
+<?php 
+    $mask_menu = $this->code_model->get_mask_menu();
 
-// $nav_medical = $this->code_model->get_series_menu('MEDICAL',$lang_code); 
+ ?>
 
-// $nav_dental = $this->code_model->get_series_menu('DENTAL',$lang_code); 
-// $nav_lab = $this->code_model->get_series_menu('LABORATORY',$lang_code); 
-// $lang_list = $this->code_model->get_lang_list(); 
-  
-
-?>
-<header>
-
-    <nav id="nav" role="navigation" style="z-index:2;">
-        <a href="#nav" title="Show navigation">Show navigation</a>
-        <a href="#" title="Hide navigation">Hide navigation</a>
-        
-        <div id="logo"><a href="<?php echo site_url()?>"><img src="<?php echo site_url()?>assets/templates/pic/logo.png" /></a></div>
-        
-        <ul>
-            <li id="firstnav"><a href="<?php echo site_url() ?>EN/devices"><?php echo $menu == 'devices'?'<b class="apexred">Devices</b>':'Devices' ?></a></li>
-            <li><a href="<?php echo site_url() ?>EN/masks"><?php echo $menu == 'masks'?'<b class="apexred">Masks</b>':'Masks' ?></a></li>
-            <li>
-                <a href="#" aria-haspopup="true"><span><?php echo $menu == 'wheretobuy'?'<b class="apexred">Where to buy</b>':'Where to buy' ?></span></a>
-                <ul>
-                    <li><a href="<?php echo site_url() ?>EN/promotion/1">Promotion</a></li>
-                    <li><a href="<?php echo site_url() ?>EN/location">Location</a></li>
-                </ul>
+<body class="page-template-template-onepage-php waves-pagebuilder menu-fixed header-transparent theme-full">
+<div class="layout-wrapper">
+  <div id="preloader">
+    <div id="status"></div>
+  </div>
+</div>
+<div id="theme-layout"> 
+  <!-- Start Header -->
+  <div class="header-container">
+    <header id="header" class="header-large clearfix">
+      <div class="show-mobile-menu clearfix"> <a href="<?php echo site_url() ?>" class="mobile-menu-icon"> <span></span><span></span><span></span> </a> </div>
+      
+      
+      <div class="tw-logo" style="position:relative;"><a class="logo" href="<?php echo site_url() ?>"><img class="logo-img" src="<?php echo site_url()?>assets/templates/img/logo.png" alt="apex"/></a></div>
+      
+      
+      
+      
+      
+      
+       <nav class="menu-container clearfix">
+        <div class="tw-menu-container">
+          <ul id="menu" class="sf-menu">
+            <li><a href="<?php echo site_url() ?>">Home</a></li>
+            
+            <li><a href="<?php echo site_url() ?>EN/devices">Devices</a>     
+              <?php $products = $this->code_model->get_products_list('656'); ?>
+                  <?php if (isset($products)): ?>
+                    <ul class="sub-menu">
+                    <?php foreach ($products as $key2 => $value2): ?>
+                        <li><a href="<?php echo site_url() ?>EN/device/<?php echo $value2->id ?>"><?php echo $value2->title ?></a></li>
+                    <?php endforeach ?>
+                    </ul>
+                  <?php endif ?>       
+               <!--  <ul class="sub-menu">
+                <li><a href="<?php echo site_url() ?>EN/Tproduct/ich.html">iCH SERIES</a></li>
+                <li><a href="<?php echo site_url() ?>EN/Tproduct/xt.html">XT SERIES</a></li>
+              </ul> -->
             </li>
-            <li>
-                <a href="#" aria-haspopup="true"><span><?php echo $menu == 'support'?'<b class="apexred">Support</b>':'Support' ?></span></a>
-                <ul>
-                    <li><a href="<?php echo site_url() ?>EN/faq?type=644">FAQ</a></li>
-                    <li><a href="<?php echo site_url() ?>EN/download?type=641">Download</a></li>
-                    <li><a href="<?php echo site_url() ?>EN/video">Video</a></li>
-                    <li><a href="<?php echo site_url() ?>EN/healthsleep">Health Sleep</a></li>
+             <li><a href="<?php echo site_url() ?>EN/masks">Masks</a>
+              <ul class="sub-menu">
+              <?php if (isset($mask_menu)): ?>
+                 
+                <?php foreach ($mask_menu as $key => $value): ?>
+                
+                  <li><a href="#"><?php echo $value->code_name ?></a>
+
+                  <?php $products = $this->code_model->get_products_list($value->code_id); ?>
+                  <?php if (isset($products)): ?>
+                    <ul class="sub-menu">
+                    <?php foreach ($products as $key2 => $value2): ?>
+                        <li><a href="<?php echo site_url() ?>EN/mask/<?php echo $value2->id ?>"><?php echo $value2->title ?></a></li>
+                    <?php endforeach ?>
+                    </ul>
+                  <?php endif ?>
+                   <!--  
+                      <li><a href="<?php echo site_url() ?>EN/Tproduct/w230.html">WIZARD 230A</a></li>
+                      <li><a href="<?php echo site_url() ?>EN/Tproduct/w230.html">WIZARD 230B</a></li>
+                    </ul> -->
+                  </li>
+
+                <?php endforeach ?>
+             
+              <?php endif ?>
+             <!--  <li><a href="#">Nasal</a>
+                <ul class="sub-menu">
+                  <li><a href="<?php echo site_url() ?>EN/Tproduct/w210.html">WIZARD 210A</a></li>
+                  <li><a href="<?php echo site_url() ?>EN/Tproduct/w210.html">WIZARD 210B</a></li>
                 </ul>
-            </li>
-            <li><a href="<?php echo site_url() ?>EN/about"><?php echo $menu == 'about'?'<b class="apexred">About Apex</b>':'About Apex' ?></a></li>
-            <li><a href="<?php echo site_url() ?>EN/Contact_front"><?php echo $menu == 'contact'?'<b class="apexred">Contact Us</b>':'Contact Us' ?></a></li>
-        
-        <li id="search">
-        <form method="get" action="/search">
-        <input name="q" type="text" size="40" placeholder="Search..." />
-        </form>
-        </li>
-        
+              </li>
+              <li><a href="#">Full Face</a>
+                <ul class="sub-menu">
+                  <li><a href="<?php echo site_url() ?>EN/Tproduct/w220.html">WIZARD 220A</a></li>
+                  <li><a href="<?php echo site_url() ?>EN/Tproduct/w220.html">WIZARD 220B</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Nasal Pillows</a>
+                <ul class="sub-menu">
+                  <li><a href="<?php echo site_url() ?>EN/Tproduct/w230.html">WIZARD 230A</a></li>
+                  <li><a href="<?php echo site_url() ?>EN/Tproduct/w230.html">WIZARD 230B</a></li>
+                </ul>
+              </li> -->
+            </ul>
+          </li>
+          <li><a href="#">Where to buy</a>
+            <ul class="sub-menu">
+              <li><a href="<?php echo site_url() ?>EN/promotion">Promotion</a></li>
+              <li><a href="<?php echo site_url() ?>EN/dealer">Apex Dealers</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Support</a>
+            <ul class="sub-menu">
+              <li><a href="<?php echo site_url() ?>EN/download">Download</a></li>
+              <li><a href="<?php echo site_url() ?>EN/faq">FAQ</a></li>
+              <li><a href="<?php echo site_url() ?>EN/video">Video</a></li>
+              <li><a href="<?php echo site_url() ?>EN/healthsleep">Sleep Apnea</a></li>
+            </ul>
+          </li>
+          <li><a href="<?php echo site_url() ?>EN/about">About APEX</a></li>
+          <li><a href="<?php echo site_url() ?>EN/Contact_front">Contact US</a></li>
+          <li><a href="<?php echo site_url() ?>EN/News_front">News</a></li>
+          <li><a href="<?php echo site_url() ?>EN/TeamOfUse">Term of use</a></li>
+          <li><a href="<?php echo site_url() ?>EN/Privacy">Privacy</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+      
+      
+      
+      
+      
+      
+      <nav id="mobile-menu" class="mobile_nav_scroll_open">
+        <ul id="menu-one-page-new" class="clearfix">
+          <li><a href="<?php echo site_url() ?>">Home</a></li>
+          <li><a href="<?php echo site_url() ?>EN/devices">Devices</a>
+            <ul class="sub-menu">
+              <li><a href="<?php echo site_url() ?>EN/product/ich.html">iCH SERIES</a></li>
+              <li><a href="<?php echo site_url() ?>EN/product/xt.html">XT SERIES</a></li>
+            </ul>
+          </li>
+          <li><a href="mask.html">Masks</a>
+            <ul class="sub-menu">
+              <li><a href="#">Nasal</a>
+                <ul class="sub-menu">
+                  <li><a href="<?php echo site_url() ?>EN/product/w210.html">WIZARD 210A</a></li>
+                  <li><a href="<?php echo site_url() ?>EN/product/w210.html">WIZARD 210B</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Full Face</a>
+                <ul class="sub-menu">
+                  <li><a href="<?php echo site_url() ?>EN/product/w220.html">WIZARD 220A</a></li>
+                  <li><a href="<?php echo site_url() ?>EN/product/w220.html">WIZARD 220B</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Nasal Pillows</a>
+                <ul class="sub-menu">
+                  <li><a href="<?php echo site_url() ?>EN/product/w230.html">WIZARD 230A</a></li>
+                  <li><a href="<?php echo site_url() ?>EN/product/w230.html">WIZARD 230B</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#">Where to buy</a>
+            <ul class="sub-menu">
+              <li><a href="<?php echo site_url() ?>EN/promotion">Promotion</a></li>
+              <li><a href="<?php echo site_url() ?>EN/dealer">Apex Dealers</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Support</a>
+            <ul class="sub-menu">
+              <li><a href="<?php echo site_url() ?>EN/download">Download</a></li>
+              <li><a href="<?php echo site_url() ?>EN/faq">FAQ</a></li>
+              <li><a href="<?php echo site_url() ?>EN/video">Video</a></li>
+              <li><a href="<?php echo site_url() ?>EN/healthsleep">Sleep Apnea</a></li>
+            </ul>
+          </li>
+          <li><a href="<?php echo site_url() ?>EN/about">About APEX</a></li>
+          <li><a href="<?php echo site_url() ?>EN/Contact_front">Contact US</a></li>
+          <li><a href="<?php echo site_url() ?>EN/News_front">News</a></li>
+          <li><a href="<?php echo site_url() ?>EN/TeamOfUse">Term of use</a></li>
+          <li><a href="<?php echo site_url() ?>EN/Privacy">Privacy</a></li>
         </ul>
-        
-    </nav>
-    
-</header>
+      </nav>
+    </header>
+    <div class="header-clone"></div>
+  </div>
+ 

@@ -91,7 +91,8 @@
 						<div class="form-group">
 							<label class="col-sm-2 col-sm-2 control-label">Code Value3</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control" name="code_value3" value="">
+								<!-- <input type="text" class="form-control" name="code_value3" value=""> -->
+								<textarea class="form-control" rows="8" id="code_value3" name="code_value3"></textarea>
 							</div>
 						</div>
 						<div class="form-group">
@@ -119,7 +120,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">圖片(160*160)</label>
+							<label class="col-sm-2 col-sm-2 control-label">圖片<!-- (160*160) --></label>
 							<div class="col-sm-4">
 								<input type="file" class="form-control" name="img" value=""> 
 							</div>

@@ -1,48 +1,72 @@
+ <!-- Start Main -->
   
-    <div class="pd_menu_top device">
-        <h1 class="titelh1">Devices</h1>
-        <img src="<?php echo site_url()?>assets/templates/pic/devicemenu1.png">
-        <p class="products_menu_content">
-        At Apex we are passionate about sleep apnea therapy.   We believe CPAP should be simple and affordable.  The products we develop always have these goals in mind and is why Apex has become one of the most popular and respected brands in the world of sleep medicine.   If you like simple solutions, easy to use products and don't see why you should overpay for CPAP it's time to take a look a good look at Apex.</p>
-        </p>
+  <section id="page-title" style="background-image: url(<?php echo site_url().'assets/'.$feature_photo ?>)"> 
+    <!-- Start Container -->
+    <div class="container">
+      <h1><?php echo $device->code_name ?></h1>
     </div>
-    
-    <div class="skdslider">
-        <ul id="demo1" class="slides">
-            <li><a class="invisible_link" href="<?php echo site_url().'EN/device/ich' ?>"><img src="<?php echo site_url()?>assets/templates/pic/devicemenu2.png" /></a>
-            <div class="slide-desc device-desc" id="slideich">
-                <h1>ICH SERIES</h1>
-                <div class="pdh2">Great looks<br>Great therapy</div>
+    <!-- End Container --> 
+  </section>
+  <section id="main">
+    <div id="page" style="margin:0 auto;">
+      <div id="time_list" class="row-container dark row-container dark bg-parallax" style="background-color: transparent; background-image: url(<?php echo site_url().'assets/'.$device->img?>);">
+        <div class="waves-container container">
+          <div class="row">
+            <div class="tw-element divider-center tw-divider-space col-md-12" style="display:block;margin-bottom:80px;margin-top:80px;" >
+              <div style=''></div>
             </div>
-            </li>
-        
- 
-        </ul>
-    </div>
-
-    <div class="skdslider">
-        <ul id="demo2" class="slides">
-     
-            <li><a class="invisible_link" href="<?php echo site_url().'EN/device/xt' ?>"><img src="<?php echo site_url()?>assets/templates/pic/devicemenu3.png" /></a>
-            <div class="slide-desc device-desc">
-                <h1>XT SERIES</h1>
-                <h2>The everyday CPAP<br>that loves to travel</h2>
+          </div>
+          <div class="row">
+            <div class="tw-element  col-md-12" style="" >
+              <div class="tw-service-box left-service style_5 no-titleline" style=" text-align:center;">
+                <p>
+                    <?php echo $device->code_value3 ?>
+                </p>
+              </div>
             </div>
-            </li>
-        </ul>
+            <div class="row">
+              <div class="tw-element divider-center tw-divider-space col-md-12" style="display:block;margin-bottom:80px;margin-top:80px;" >
+                <div style=''></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php if (isset($device->products) && sizeof($device->products)>0): ?>
+          <?php $i = 0; ?>
+          <?php foreach ($device->products as $key2 => $value2): ?>
+              <div id="" class="row-container light bg-scroll" 
+              <?php if ($i % 2 == 0): ?>
+                style="background-color: transparent; background-image: url(<?php echo site_url()?>assets/templates/img/apex/ich_bg.jpg);"
+              <?php else: ?>
+                style="background-color: #FFF;"
+              <?php endif ?>
+              
+              >
+                <div class="waves-container container">
+                  <div class="row">
+                    <div class="col-md-12 ">
+                      <div class="row">
+                        <div class="tw-element carousel-container col-md-12" style="" > <a href="<?php echo site_url().'EN/device/'.$value2->id ?>"><img src="<?php echo site_url().'assets/'.$value2->img?>"></a> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <?php $i++; ?>
+          <?php endforeach ?>
+      <?php endif ?>
+     <!--  <div id="" class="row-container light bg-scroll" style="background-color: #FFF;">
+        <div class="waves-container container">
+          <div class="row">
+            <div class="col-md-12 ">
+              <div class="row">
+                <div class="tw-element carousel-container col-md-12" style="" > <a href="product/xt.html"><img src="img/apex/xt.png"></a> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
     </div>
-     <script type="text/javascript" src="<?php echo site_url()?>assets/templates/js/skdslider.min.js"></script>
-      <script type="text/javascript">
-        jQuery(document).ready(function(){
-            jQuery('#demo1').skdslider({delay:5000, autoSlide:0, animationSpeed: 800,showNextPrev:false,showPlayButton:false, showNav:false, animationType:'sliding'});
-            jQuery('#demo2').skdslider({delay:5000, autoSlide:0, animationSpeed: 800,showNextPrev:false,showPlayButton:false, showNav:false, animationType:'sliding'});
-            
-            jQuery('#responsive').change(function(){
-              $('#responsive_wrapper').width(jQuery(this).val());
-              $(window).trigger('resize');
-            });
-            
-        });
-</script>
-    
-    
+  </section>
+  <!-- End Main -->

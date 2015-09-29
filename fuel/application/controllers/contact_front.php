@@ -19,7 +19,8 @@ class Contact_front extends CI_Controller {
 		// die;	
 		$vars['views'] = 'contact';	
 		$vars['menu'] = 'contact';	    
-		$vars['css'] = site_url()."assets/templates/css/contact.css";
+		// $vars['css'] = site_url()."assets/templates/css/contact.css";
+		$vars['feature_photo'] = $this->code_model->get_feature_photo('Contact_Photo');
 		$this->fuel->pages->render("index",$vars);
 	}
 

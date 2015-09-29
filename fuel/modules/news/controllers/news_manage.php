@@ -350,25 +350,26 @@ class News_manage extends Fuel_base_controller {
 		$response = array();
 		if(!empty($id))
 		{
+					// $response['id'] = $id;
 			$record = $this->news_manage_model->get_news_detail($id);
 			if (isset($record)) {
 				$success = $this->news_manage_model->del($id);
-				$this->news_manage_model->delete_order($record); 
+				// $this->news_manage_model->delete_order($record); 
 				if($success)
 				{
 					$response['status'] = 1;
 				}
 				else
 				{
-					$response['status'] = -1;
+					$response['status'] = -2;
 				}
 			}else{
-				$response['status'] = -1;
+				$response['status'] = -3;
 			} 
 		}
 		else
 		{
-			$response['status'] = -1;
+			$response['status'] = -4;
 		}
 
 		echo json_encode($response);

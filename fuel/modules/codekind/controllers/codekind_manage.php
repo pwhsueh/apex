@@ -229,10 +229,11 @@ class Codekind_manage extends Fuel_base_controller {
 		 
 		$post_arr = $this->input->post();
 		$config['upload_path'] = $root_path;
-		$config['allowed_types'] = 'png';
+		$config['allowed_types'] = 'png|jpg|jpeg';
 		$config['max_size']	= '9999';
-		$config['max_width']  = '1024';
-		$config['max_height']  = '768';
+		// $config['max_width']  = '1024';
+		// $config['max_height']  = '768';
+
 
 		$this->load->library('upload',$config); 
 
@@ -391,10 +392,10 @@ class Codekind_manage extends Fuel_base_controller {
 			 
 			$post_arr = $this->input->post();
 			$config['upload_path'] = $root_path;
-			$config['allowed_types'] = 'png';
+			$config['allowed_types'] = 'png|jpg|jpeg';
 			$config['max_size']	= '9999';
-			$config['max_width']  = '1024';
-			$config['max_height']  = '768';
+			// $config['max_width']  = '1024';
+			// $config['max_height']  = '768';
 
 			$this->load->library('upload',$config); 
 

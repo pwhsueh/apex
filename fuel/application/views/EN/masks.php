@@ -1,85 +1,171 @@
- <div class="pd_menu_top mask">
-      <div id="pd_menu_top_wrapper">
-        <h1>Masks</h1>
-        <p class="products_menu_content">
-        There's a lot of masks out there; choosing one can be a daunting exercise.  Different materials, fit features, shapes and sizes - how do you know which one to pick?  And then there's the cost. The replacement parts necessary to keep your equipment performing well can cost a small fortune.<br>And then there's the cost. The replacement parts necessary to keep your equipment performing well can cost a small fortune. At Apex we built our mask range to be simple to understand and navigate.  One full face, one nasal and one nasal pillow design with sizes to suit everyone.  Starter kits are available so you can immediately find the Wizard mask that fits you just right.  And because we know how important frequent replacement of crucial parts are we made ours much more competitively priced than the big guys.  We want you to feel you are getting value as well as great CPAP therapy.  It's another thing to help you sleep better at night.
-</p>
-
-
-        </div>
-      <img src="<?php echo site_url() ?>assets/templates/pic/maskmenu1.png">
+ <!-- Start Main -->
+  <?php //print_r($mask_menu) ?>
+  <section id="page-title" style="background-image: url(<?php echo site_url().'assets/'.$feature_photo ?>)"> 
+    
+    <!-- Start Container -->
+    <div class="container">
+      <h1><?php echo $mask->code_name ?></h1>
     </div>
-    
-    <h1 class="inner_title">Nasal</h1>
-    
-  <div class="skdslider">
-    <ul id="demo1" class="slides">
-            <li>
-            <a class="invisible_link" href="<?php echo site_url().'EN/masks/w210' ?>"><img src="<?php echo site_url() ?>assets/templates/pic/maskmenu2a.png" /></a>
-            <div class="slide-desc mask-desc">
-        <h1>WiZARD 210a</h1>
-        <h2>Don't get lost in the mask maze</h2>
+    <!-- End Container --> 
+  </section>
+  <section id="main">
+    <div id="page" style="margin:0 auto;">
+
+      <div id="" class="row-container dark row-container dark bg-parallax" style="background-color: transparent; background-image: url(<?php echo site_url().'assets/'.$mask->img?>);">
+        <div class="waves-container container">
+          <div class="row">
+            <div class="tw-element divider-center tw-divider-space col-md-12" style="display:block;margin-bottom:80px;margin-top:80px;" >
+              <div style=''></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="tw-element  col-md-12" style="" >
+              <div class="tw-service-box left-service style_5 no-titleline" style=" text-align:center;">
+                <p style="color:#FFF;">
+                    <?php echo $mask->code_value3 ?>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="tw-element divider-center tw-divider-space col-md-12" style="display:block;margin-bottom:80px;margin-top:80px;" >
+                <div style=''></div>
+              </div>
+            </div>
+          </div>
         </div>
-      </li>
-          <li><a class="invisible_link" href="<?php echo site_url().'EN/masks/w210' ?>"><img src="<?php echo site_url() ?>assets/templates/pic/maskmenu2b.png" /></a>
-            <div class="slide-desc mask-desc">
-        <h1>WiZARD 210b</h1>
-        <h2>Don't get lost in the mask maze</h2>
-        </div>
-      </li>
-    </ul>
-  </div>
-  
-    <h1 class="inner_title">Full Face</h1>
-    
-  <div class="skdslider">
-    <ul id="demo2" class="slides">
-    <!--<li><img src="pic/devicemenu2.png" />
-<!--Slider Description example
- <div class="slide-desc">
-    <h2>Slider Title 1</h2>
-    <p>Demo description here. Demo description here. Demo description here. Demo description here. Demo description here. <a class="more" href="#">more</a></p>
-  </div>
-</li>-->
-      <li><a class="invisible_link" href="<?php echo site_url().'EN/masks/w220' ?>"><img src="<?php echo site_url() ?>assets/templates/pic/maskmenu3.png" /></a>
-            <div class="slide-desc mask-desc">
-        <h1>WiZARD 220</h1>
-        <h2>Don't get lost in the mask maze</h2>
-        </div>
-      </li>
-    </ul>
-  </div>
-    
-    <h1 class="inner_title">Nasal Pillows</h1>
-    
-    <div class="skdslider">
-    <ul id="demo3" class="slides">
-    <!--<li><img src="pic/devicemenu2.png" />
-<!--Slider Description example
- <div class="slide-desc">
-    <h2>Slider Title 1</h2>
-    <p>Demo description here. Demo description here. Demo description here. Demo description here. Demo description here. <a class="more" href="#">more</a></p>
-  </div>
-</li>-->
-      <li><a class="invisible_link" href="<?php echo site_url().'EN/masks/w230' ?>"><img src="<?php echo site_url() ?>assets/templates/pic/maskmenu4.png" /></a>
-            <div class="slide-desc mask-desc">
-        <h1>WiZARD 230</h1>
-        <h2>The best value pillow mask available</h2>
-        </div>
-      </li>
-    </ul>
-  </div>
-    <script type="text/javascript" src="<?php echo site_url()?>assets/templates/js/skdslider.min.js"></script>
-    <script type="text/javascript">
-    jQuery(document).ready(function(){
-      jQuery('#demo1').skdslider({delay:5000, autoSlide:0, animationSpeed: 800,showNextPrev:true,showPlayButton:false, showNav:0, animationType:'sliding'});
-      jQuery('#demo2').skdslider({delay:5000, autoSlide:0, animationSpeed: 800,showNextPrev:false,showPlayButton:false, showNav:false, animationType:'sliding'});
-      jQuery('#demo3').skdslider({delay:5000, autoSlide:0, animationSpeed: 800,showNextPrev:false,showPlayButton:false, showNav:false, animationType:'sliding'});
+      </div>
+
+      <?php if (isset($mask_menu)): ?>
+        <?php foreach ($mask_menu as $key => $value): ?>
+            <div id="" class="row-container dark row-container dark bg-parallax" style="background-color: transparent; background-image: url(<?php echo site_url().'assets/'.$value->img?>)">
+              <div class="waves-container container">
+                <div class="row">
+                  <div class="tw-element divider-center tw-divider-space col-md-12" style="display:block;margin-bottom:15px;margin-top:15px;" >
+                    <div style=''></div>
+                  </div>
+                </div>
+                 <?php if (isset($value->products) && sizeof($value->products)>0): ?>
+                <div class="row">
+                  <div class="tw-element waves-heading center col-md-12" style="" >
+                    <div class="heading-container">
+                      <h3 class="heading-title"><?php echo $value->code_value1 ?></h3>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="tw-element carousel-container col-md-12" style="" >
+                    <div class="waves-carousel-post list_carousel carousel-anim" data-autoplay="false" data-items="1">
+                      <div class="waves-carousel">
+                        <!-- <div class="tw-owl-item">
+                          <div class="entry-media image-slide-container list_carousel clearfix">
+                            <div class="waves-carousel">
+                              <div class="tw-owl-item"><a href="product/w210.html"><img src="img/apex/nm.png"></a></div>
+                            </div>
+                          </div>
+                        </div> -->
+                       
+                          <?php foreach ($value->products as $key2 => $value2): ?>
+                          <div class="tw-owl-item">
+                            <div class="entry-media image-slide-container list_carousel clearfix">
+                              <div class="waves-carousel">
+                                <div class="tw-owl-item"><a href="<?php echo site_url().'EN/mask/'.$value2->id ?>"><img src="<?php echo site_url().'assets/'.$value2->img?>"></a></div>
+                              </div>
+                            </div>
+                          </div>
+                          <?php endforeach ?>
+                       
+                        
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                 <?php endif ?>
+              </div>
+            </div>
+        <?php endforeach ?>
+      <?php endif ?>
+
       
-      jQuery('#responsive').change(function(){
-        $('#responsive_wrapper').width(jQuery(this).val());
-        $(window).trigger('resize');
-      });
-      
-    });
-</script>
+      <!-- <div id="" class="row-container dark row-container dark bg-parallax" style="background-color: transparent; background-image: url(img/apex/wizard_bg.jpg)">
+        <div class="waves-container container">
+          <div class="row">
+            <div class="tw-element divider-center tw-divider-space col-md-12" style="display:block;margin-bottom:15px;margin-top:15px;" >
+              <div style=''></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="tw-element waves-heading center col-md-12" style="" >
+              <div class="heading-container">
+                <h3 class="heading-title">Full Face Mask</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="tw-element carousel-container col-md-12" style="" >
+              <div class="waves-carousel-post list_carousel carousel-anim" data-autoplay="false" data-items="1">
+                <div class="waves-carousel">
+                  <div class="tw-owl-item">
+                    <div class="entry-media image-slide-container list_carousel clearfix">
+                      <div class="waves-carousel">
+                        <div class="tw-owl-item"><a href="product/w220.html"><img src="img/apex/ffm.png"></a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tw-owl-item">
+                    <div class="entry-media image-slide-container list_carousel clearfix">
+                      <div class="waves-carousel">
+                        <div class="tw-owl-item"><a href="product/w220.html"><img src="img/apex/ffm.png"></a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="" class="row-container dark row-container dark bg-parallax" style="background-color: transparent; background-image: url(img/apex/wizard_bg2.jpg)">
+        <div class="waves-container container">
+          <div class="row">
+            <div class="tw-element divider-center tw-divider-space col-md-12" style="display:block;margin-bottom:15px;margin-top:15px;" >
+              <div style=''></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="tw-element waves-heading center col-md-12" style="" >
+              <div class="heading-container">
+                <h3 class="heading-title">Nasal Pillow Mask</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="tw-element carousel-container col-md-12" style="" >
+              <div class="waves-carousel-post list_carousel carousel-anim" data-autoplay="false" data-items="1">
+                <div class="waves-carousel">
+                  <div class="tw-owl-item">
+                    <div class="entry-media image-slide-container list_carousel clearfix">
+                      <div class="waves-carousel">
+                        <div class="tw-owl-item"><a href="product/w230.html"><img src="img/apex/npm.png"></a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tw-owl-item">
+                    <div class="entry-media image-slide-container list_carousel clearfix">
+                      <div class="waves-carousel">
+                        <div class="tw-owl-item"><a href="product/w230.html"><img src="img/apex/npm.png"></a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </section>
+  <!-- End Main -->

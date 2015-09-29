@@ -5,7 +5,8 @@
 |--------------------------------------------------------------------------
 */
 $config['nav']['products'] = array(
-'products/lists'		=> '產品管理'
+'products/lists?type=656'		=> 'Device',
+'products/lists?type=657'		=> 'Mask'
 );
 
 // deterines whether to use this configuration below or the database for controlling the blogs behavior
@@ -24,8 +25,11 @@ $config['products_javascript'] = array(
 );
 
 $config['products_ck_javascript'] = array(
-    site_url().'assets/admin_js/ckeditor.js',
-    site_url().'assets/admin_js/adapters/jquery.js',  
+    // site_url().'assets/admin_js/ckeditor.js',
+    site_url().'assets/admin_js/ckeditor/ckeditor.js',
+	site_url().'assets/admin_js/ckfinder/ckfinder.js'  
+    // site_url().'assets/admin_js/adapters/jquery.js',  
+	// site_url().'assets/admin_js/ckfinder/ckfinder.js'  
 );
 
 $config['products_css'] = array(

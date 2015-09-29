@@ -18,7 +18,7 @@ class Home extends CI_Controller {
 	{	
 		$lang_code = $this->uri->segment(1);
 		$vars['views'] = 'home';
-		$vars['css'] = site_url()."assets/templates/css/index.css";
+		// $vars['css'] = site_url()."assets/templates/css/index.css";
  		$results = $this->code_model->get_news_list(0,100,$lang_code,46); 
  		$vars['results'] = $results;
 		$vars['base_url'] = base_url();

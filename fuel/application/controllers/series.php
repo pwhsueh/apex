@@ -11,10 +11,28 @@ class Series extends CI_Controller {
 	function devices()
 	{	
 		$lang_code = $this->uri->segment(1);
+
+
+		$device = $this->code_model->get_code_detail(656);
+    	$device->products = $this->code_model->get_products_list($device->code_id);
 		 
+		$vars['device'] = $device;	
 		$vars['views'] = 'devices';		    
-		$vars['css'] = site_url()."assets/templates/css/product_main.css"; 
+		$vars['feature_photo'] = $this->code_model->get_feature_photo('Device_Photo');
+		// $vars['css'] = site_url()."assets/templates/css/product_main.css"; 
 		$vars['menu'] = "devices"; 
+		// $vars['not_show_footer'] = true;
+		$this->fuel->pages->render("index",$vars);
+	}
+
+	function device($id){
+		$lang_code = $this->uri->segment(1);		 
+		$vars['views'] = 'product';		    
+		$vars['product'] = $this->code_model->get_product($id);
+		// $vars['css'] = site_url()."assets/templates/css/product_main.css"; feature
+		$vars['feature'] = 'devices';		 
+		$vars['menu'] = "devices"; 
+		$vars['layout'] = "product_main"; 
 		// $vars['not_show_footer'] = true;
 		$this->fuel->pages->render("index",$vars);
 	}
@@ -47,10 +65,36 @@ class Series extends CI_Controller {
 	function masks()
 	{	
 		$lang_code = $this->uri->segment(1);
+
+		$mask = $this->code_model->get_code_detail(657);
+
+	    $mask_menu = $this->code_model->get_mask_menu();
+
+	    foreach ($mask_menu as $key => $value) {
+	    	$value->products = $this->code_model->get_products_list($value->code_id);
+	    }
+	    
+		$vars['mask_menu'] = $mask_menu;	
 		 
+		$vars['mask'] = $mask;	
 		$vars['views'] = 'masks';		    
-		$vars['css'] = site_url()."assets/templates/css/product_main.css"; 
+
+		$vars['feature_photo'] = $this->code_model->get_feature_photo('MASK_Photo');
+		// $vars['css'] = site_url()."assets/templates/css/product_main.css"; 
 		$vars['menu'] = "masks"; 
+		// $vars['not_show_footer'] = true;
+		$this->fuel->pages->render("index",$vars);
+	}
+
+	function mask($id)
+	{	
+		$lang_code = $this->uri->segment(1);		 
+		$vars['views'] = 'product';		    
+		// $vars['css'] = site_url()."assets/templates/css/product_main.css"; feature
+		$vars['product'] = $this->code_model->get_product($id);
+		$vars['feature'] = 'masks';		 
+		$vars['menu'] = "devices"; 
+		$vars['layout'] = "product_main"; 
 		// $vars['not_show_footer'] = true;
 		$this->fuel->pages->render("index",$vars);
 	}

@@ -34,7 +34,21 @@
 							<?php endif;?>
 						</select>
 				    </div>
+				    <?php if (isset($type)): ?>
 				    <label class="col-sm-4 control-label" >
+						系列
+					</label>
+				    <div class="col-sm-8">
+				        <select name="search_type_id">						
+						<?php foreach ($type as $key => $value): ?>
+                             <option value="<?php echo $value->code_id ?>" <?php if ($search_type_id == $value->code_id): ?>
+									selected
+								<?php endif ?>><?php echo $value->code_name ?></option>
+						<?php endforeach ?>	
+						</select>		
+				    </div>						 
+					<?php endif ?>   
+				    <!-- <label class="col-sm-4 control-label" >
 						系列
 					</label>
 				    <div class="col-sm-8">
@@ -43,7 +57,7 @@
 							 <option value="DENTAL" <?php echo $search_serial == 'DENTAL'?"selected":""; ?> >Dental</option>
 							 <option value="LABORATORY" <?php echo $search_serial == 'LABORATORY'?"selected":""; ?> >Laboratory</option>
 						</select> 
-				    </div>
+				    </div> -->
 				    <label class="col-sm-4 control-label" >
 						Keyword
 					</label>
@@ -89,7 +103,6 @@
 						<th>編號</th>
 						<th>語言</th>
 						<th>Title</th>
-						<th>系列</th> 
 						<th>順序</th> 
 						<th>刪除</th>
 					</tr>
@@ -110,8 +123,7 @@
 						</td> 
 					    <td><?php echo $rows->id?></td> 
 					    <td><?php echo $rows->lang?></td> 
-						<td><?php echo $rows->title?></td> 
-						<td><?php echo $rows->level_str?></td>  
+						<td><?php echo $rows->title?></td>  
 						<td><?php echo $rows->prod_order?></td>
 						<td>
 							<button class="btn btn-xs btn-primary" type="button" onclick="aHover('<?php echo $edit_url.$rows->id?>')" >更新</button>

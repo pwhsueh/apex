@@ -1,27 +1,50 @@
-<div id="main">
+<!-- Start Main -->
+  <section id="main">
+    <div id="page" style="margin:0 auto;">
+      <div id="" class="row-container dark row-container light" style="background-color: #FFF;">
+        <div class="waves-container container">
+          <div class="row">
+            <div class="tw-element divider-center tw-divider-space col-md-12" style="display:block;margin-bottom:40px;margin-top:40px;" >
+              <div style=''></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="tw-element waves-heading center col-md-12" style="" >
+              <div class="heading-container">
+                <h3 class="heading-title">Video</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
 
-<h1 class="titelh1">Video</h1>
-	<?php if (isset($results)): ?>
-		<?php foreach ($results as $key => $value): ?>
-	        <div class="video_wrapper clear">        	  
-				<video id="player1" width="700" height="400" controls preload="none" poster="<?php echo site_url().'assets/'.$value->img ?>"> 
-					<source src="<?php echo site_url().'assets/'.$value->file ?>" type="video/mp4" /> 
-				</video>
-				<div class="video_content">
-					<h2><?php echo $value->title ?></h2>
-					<p><?php echo htmlspecialchars_decode($value->content) ?></p>
-					<div class="video_date"><?php echo dateconvert($value->date,'M d,Y') ?></div>
-				</div>
+          	<?php if (isset($results)): ?>
+				<?php foreach ($results as $key => $value): ?>
 
-			</div>
-	    <?php endforeach ?>   
-	<?php endif ?>
-	
+            <div class="tw-element  col-md-12" style="" >
+              <div class="tw-service-box left-service style_5 no-titleline" style=" width:100%">
+                <div class="tw-service-content desc_unstyle">
+                  <ul style="padding:0 40px; margin:0">
+                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/NnxB8uSfHEA" frameborder="0" allowfullscreen></iframe> -->
+                    <?php echo htmlspecialchars_decode($value->content) ?>
+                    <h2 style="color:#333;"><?php echo $value->title ?></h2>
+                    <p><?php echo dateconvert($value->date,'M d,Y') ?></p>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
-    <div class="bottom_nav">
-        <ul>
-        <?php echo $page_jump;?>
-        </ul>
-    </div>   
+	             <?php endforeach ?>   
+			<?php endif ?>
+			
 
-</div>
+            <div class="row">
+              <div class="tw-element divider-center tw-divider-space col-md-12" style="display:block; margin-bottom:40px; margin-top:40px;" >
+                <div style=''></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+

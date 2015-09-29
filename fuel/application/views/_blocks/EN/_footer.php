@@ -1,13 +1,36 @@
+ <footer id="footer"> 
+    <!-- Start Container -->
+    <div style="max-width:1800px; margin:0 auto;">
+      <div class="row">
+        <?php echo fuel_block('footer_EN') ?>
+        <!-- <div class="col-md-12" style="text-align: left;">
+          <div class="foot_link"> 
+            <span>
+                <a href="<?php echo site_url() ?>"> HOME </a>
+            </span> | 
+            <span>
+                <a href="<?php echo site_url() ?>EN/Contact_front"> Contact US </a>
+            </span> | 
+            <span>
+                <a href="<?php echo site_url() ?>/EN/News_front/1"> News </a>
+            </span> | 
+            <span>
+                <a href="<?php echo site_url() ?>EN/TeamOfUse"> Term of use </a>
+            </span> | 
+            <span>
+                <a href="<?php echo site_url() ?>EN/Privacy"> Privacy </a>
+            </span> 
+          </div>
+          <p class="copyright">Copyright &copy; 2015 APEX MEDICAL CORP. All right reserved</p>
+          <div style="display:inline; float:right; margin-right:20px;"> <span style="margin-right:10px;"><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a></span> <span ><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a></span> </div>
+        </div> -->
+      </div>
+    </div>
+    <!-- End Container --> 
+  </footer>
 
-
-
-    
-    <script type="text/javascript" href="<?php echo site_url()?>assets/templates/js/doubletaptogo.js"></script>
-    
-    <script>
-       $(function() {
-           $('#nav li:has(ul)').doubleTapToGo();
-       });
+      <script>
+      
 
        function go(url){
             window.location.href=url;
@@ -18,34 +41,3 @@
         }
 
     </script>
-    
-    <footer class="footer-distributed">
-
-            <div class="footer-right">
-
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <!--<a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-github"></i></a>-->
-
-            </div>
-
-            <div class="footer-left">
-
-                <!-- <p class="footer-links">
-                    <a href="<?php echo site_url() ?>">Home</a>
-                    |
-                    <a href="<?php echo site_url() ?>EN/Contact_front">Contact Us</a>
-                    |
-                    <a href="<?php echo site_url() ?>EN/News_front">News</a>
-                    |
-                    <a href="<?php echo site_url() ?>EN/TeamOfUse">Term of use</a>
-                    |
-                    <a href="<?php echo site_url() ?>EN/Privacy">Privacy</a>
-                </p>
-
-                <p id="footerright">Copyright ©2015 APEX MEDICAL CORP. All right reserved</p> -->
-                <?php echo fuel_block('footer_EN') ?>
-            </div>
-
-        </footer>

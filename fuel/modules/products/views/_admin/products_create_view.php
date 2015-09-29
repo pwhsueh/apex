@@ -33,91 +33,108 @@
 										<option value="<?php echo $rows->code_key ?>" ><?php echo $rows->code_name ?></option>
 									<?php endforeach;?>
 									<?php endif;?>
-								</select>
+								</select> 
+								<input type="hidden" name="type_name" value="<?php echo $type_name ?>" />
 							</div>
-						</div>	  
+						</div>	 
+						<?php if (isset($type)): ?>
 						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">系列</label>
-							<div class="col-sm-4">
-								<select id="series_1" name="series_1" >
-									 <option value="Medical">Medical</option>
-									 <option value="DENTAL">DENTAL</option>
-									 <option value="LABORATORY">LABORATORY</option>
-								</select>
-								<select name="series_2" id="series_2"> 
-								</select>
-								<select name="series_3" id="series_3"> 
-								</select>
-								<select name="series_4" id="series_4"> 
-								</select>
+							<label class="col-sm-2 col-sm-2 control-label">Type</label>
+							<div class="col-sm-4">		
+								<select name="type_id">						
+								<?php foreach ($type as $key => $value): ?>
+                                     <option value="<?php echo $value->code_id ?>"><?php echo $value->code_name ?></option>
+								<?php endforeach ?>	
+								</select>							
 							</div>
-						</div>	   
+						</div>	
+						<?php else: ?>
+							<input type="hidden" name="type_id" value="656" />
+						<?php endif ?>   
 						<div class="form-group">
 							<label class="col-sm-2 col-sm-2 control-label">Title</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="title" value=""> 
 							</div>
 						</div>
-						<div class="form-group">
+				<!-- 		<div class="form-group">
 							<label class="col-sm-2 col-sm-2 control-label">Abstract</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="abstract" value=""> 
 							</div>
-						</div>
+						</div> -->
 						<div class="form-group">
 							<label class="col-sm-2 col-sm-2 control-label">Sub title</label>
 							<div class="col-sm-4"> 
 								<input type="text" class="form-control" name="sub_title" value=""> 
 							</div>
 						</div>	
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label class="col-sm-2 col-sm-2 control-label">Descript</label>
 							<div class="col-sm-4"> 
 								<textarea class="form-control" rows="8" id="descript" name="descript"></textarea>
 							</div>
-						</div>					  
+						</div>	 -->				  
 						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Image 1(425*425)</label>
+							<label class="col-sm-2 col-sm-2 control-label">Section 1</label>
 							<div class="col-sm-4">
-								<input type="file" class="form-control" name="img1" value=""> 
+								<textarea class="ckeditor" rows="8" id="section1" name="section1"></textarea>
 							</div>
 						</div>					  
 						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Image 2(425*425)</label>
+							<label class="col-sm-2 col-sm-2 control-label">Section 2</label>
 							<div class="col-sm-4">
-								<input type="file" class="form-control" name="img2" value=""> 
+								<textarea class="ckeditor" rows="8" id="section2" name="section2"></textarea>
 							</div>
 						</div>						  
 						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Image 3(425*425)</label>
+							<label class="col-sm-2 col-sm-2 control-label">Section 3</label>
 							<div class="col-sm-4">
-								<input type="file" class="form-control" name="img3" value=""> 
+								<textarea class="ckeditor" rows="8" id="section3" name="section3"></textarea>
 							</div>
 						</div>						  
 						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Image 4(425*425)</label>
+							<label class="col-sm-2 col-sm-2 control-label">Section 4</label>
 							<div class="col-sm-4">
-								<input type="file" class="form-control" name="img4" value=""> 
+								<textarea class="ckeditor" rows="8" id="section4" name="section4"></textarea>
 							</div>
 						</div>		
 						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Category file</label>
+							<label class="col-sm-2 col-sm-2 control-label">Section 5</label>
 							<div class="col-sm-4"> 
-								<input type="file" class="form-control" name="category_url" value=""> 
+								<textarea class="ckeditor" rows="8" id="section5" name="section5"></textarea>
+							</div>
+						</div>		
+						<div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Section 6</label>
+							<div class="col-sm-4"> 
+								<textarea class="ckeditor" rows="8" id="section6" name="section6"></textarea>
+							</div>
+						</div>		
+						<div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Section 7</label>
+							<div class="col-sm-4"> 
+								<textarea class="ckeditor" rows="8" id="section7" name="section7"></textarea>
 							</div>
 						</div>	
 						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Detail</label>
+							<label class="col-sm-2 col-sm-2 control-label">Section 8</label>
 							<div class="col-sm-4"> 
-								<textarea class="form-control" rows="8" id="detail" name="detail"></textarea>
+								<textarea class="ckeditor" rows="8" id="section8" name="section8"></textarea>
 							</div>
-						</div>		
+						</div>	
 						<div class="form-group">
 							<label class="col-sm-2 col-sm-2 control-label">順序</label>
 							<div class="col-sm-4"> 
-								<input type="text" class="form-control" id="prod_order" name="prod_order" > 
+								<input type="text" class="ckeditor" id="prod_order" name="prod_order" > 
 							</div>
-						</div>		
+						</div>					  
+						<div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Image</label>
+							<div class="col-sm-4">
+								<input type="file" class="form-control" name="img" value=""> 
+							</div>
+						</div>			
 						<div class="form-group">
 							<div class="col-sm-12" style="text-align:center">
 								<button type="submit" class="btn btn-info">新增</button>
@@ -145,103 +162,7 @@
  
  		
 
-		$("#lang").change(function() { 
-  		   $('#series_2').find('option').remove().end();
-  		   $('#series_3').find('option').remove().end();
-  		   $('#series_4').find('option').remove().end(); 
-  		   $("#series_1").trigger('change'); 
-		});
-	 
-		$("#series_1").change(function() { 
-  		   $('#series_2').find('option').remove().end();
-  		   $('#series_3').find('option').remove().end();
-  		   $('#series_4').find('option').remove().end();
-  		    console.log('<?php echo site_url(); ?>' + 'fuel/products/series/'  + $(this).val() + '/' +$("#lang").val() + '/-1');
-		   $.ajax({
-                url: '<?php echo site_url(); ?>' + 'fuel/products/series/' + $(this).val() + '/' +$("#lang").val() + '/-1',
-                cache: false
-		        }).done(function (data) {            
-	                var obj = $.parseJSON(data);
-	                if (obj != null) {	                	
-						for (var i = 0 ;i<obj.length;i++) { 
-		   					$('#series_2').append(
-						        $("<option></option>").text(obj[i].code_name).val(obj[i].code_id)
-						   );
-						};
-					    $("#series_2").trigger('change'); 
-	                }
-				});
-			});
-
-		$("#series_2").change(function() {  
-  		   $('#series_3').find('option').remove().end();
-  		   $('#series_4').find('option').remove().end();
-  		    console.log('<?php echo site_url(); ?>' + 'fuel/products/series/' + $("#series_1").val() + '/' +$("#lang").val() + '/' + $(this).val());
-		   $.ajax({
-                url: '<?php echo site_url(); ?>' + 'fuel/products/series/' + $("#series_1").val() + '/' +$("#lang").val() + '/' + $(this).val(),
-                cache: false
-		        }).done(function (data) {            
-	                var obj = $.parseJSON(data);
-	                if (obj != null) {	
-	                	for (var i = 0 ;i<obj.length;i++) { 
-		   					$('#series_3').append(
-						        $("<option></option>").text(obj[i].code_name).val(obj[i].code_id)
-						   );
-						};
-						$("#series_3").trigger('change');
-	                }					
-				});
-			});
-
-		$("#series_3").change(function() {   
-  		   $('#series_4').find('option').remove().end();
-  		   console.log('<?php echo site_url(); ?>' + 'fuel/products/series/' + $("#series_1").val() + '/' +$("#lang").val() + '/' + $(this).val());
-		   $.ajax({
-                url: '<?php echo site_url(); ?>' + 'fuel/products/series/' + $("#series_1").val() + '/' +$("#lang").val() + '/' + $(this).val(),
-                cache: false
-		        }).done(function (data) {            
-	                var obj = $.parseJSON(data);
-	                if (obj != null) {	                	
-						for (var i = 0 ;i<obj.length;i++) { 
-		   					$('#series_4').append(
-						        $("<option></option>").text(obj[i].code_name).val(obj[i].code_id)
-						   ); 
-						};
-						$("#series_4").trigger('change');
-	                }
-				});
-			});
-
-		$("#series_1").trigger('change');
-
-		var config =
-            {
-                height: 380,
-                width: 850,
-                linkShowAdvancedTab: false,
-                scayt_autoStartup: false,
-                enterMode: Number(2),
-                toolbar_Full: [
-                				[ 'Styles', 'Format', 'Font', 'FontSize', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ],
-                				['Bold', 'Italic', 'Underline', '-', 'NumberedList', 'BulletedList'],
-                                ['Link', 'Unlink'], ['Undo', 'Redo', '-', 'SelectAll'], [ 'TextColor', 'BGColor' ],['Checkbox', 'Radio', 'Image' ], ['Source']
-                              ]
-
-            };
-		$( 'textarea#descript' ).ckeditor(config); 
-		$( 'textarea#detail' ).ckeditor(config); 
-
-		$("#series_4").change(function() {   
-   		   $.ajax({
-                url: '<?php echo site_url(); ?>' + 'fuel/products/get_prod_order/' + $("#lang").val() + '/' + $("#series_4").val() ,
-                cache: false
-		        }).done(function (data) {            
-	                var obj = $.parseJSON(data);
-	                if (obj != null) {	     
-						$("#prod_order").val(obj.total_rows);
-	                }
-				});
-			}); 
+	   
 
 	});
 </script>
