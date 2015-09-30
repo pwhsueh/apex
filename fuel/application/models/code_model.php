@@ -244,8 +244,9 @@ class Code_model extends CI_Model {
 
     public function get_news_list($dataStart, $dataLen, $lang,$type ,$filter = "",$orderby="news_order"){         
         $from = $dataStart;
+        
         $to = $dataStart+$dataLen;
-        $sql = @"select * from mod_news where type = '$type' and lang='$lang' $filter order by $orderby limit $from,$to ";
+        $sql = @"select * from mod_news where type = '$type' and lang='$lang' AND news_order <> -99 $filter order by $orderby limit $from,$to ";
         $query = $this->db->query($sql);
         // echo $sql;//exit;
         if($query->num_rows() > 0)

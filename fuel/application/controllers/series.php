@@ -15,6 +15,20 @@ class Series extends CI_Controller {
 
 		$device = $this->code_model->get_code_detail(656);
     	$device->products = $this->code_model->get_products_list($device->code_id);
+ 
+    	if (!isset($device->products) || sizeof($device->products) <= 0) {
+    		$device->products = array();
+    	}
+
+    	$xt = new stdClass();
+	    $xt->id = 'xt';
+	    $xt->img = '/templates/img/apex/ich_1.png';
+	    array_push($device->products, $xt);
+
+	    $ich = new stdClass();
+	    $ich->id = 'ich';
+	    $ich->img = '/templates/img/apex/xt.png';
+	    array_push($device->products, $ich);
 		 
 		$vars['device'] = $device;	
 		$vars['views'] = 'devices';		    
@@ -32,7 +46,7 @@ class Series extends CI_Controller {
 		// $vars['css'] = site_url()."assets/templates/css/product_main.css"; feature
 		$vars['feature'] = 'devices';		 
 		$vars['menu'] = "devices"; 
-		$vars['layout'] = "product_main"; 
+		$vars['layout'] = "product_main2"; 
 		// $vars['not_show_footer'] = true;
 		$this->fuel->pages->render("index",$vars);
 	}
@@ -42,10 +56,10 @@ class Series extends CI_Controller {
 		$lang_code = $this->uri->segment(1);
 		 
 		$vars['views'] = 'ich';		    
-		$vars['css'] = site_url()."assets/templates/products/css/ich.css"; 
+		// $vars['css'] = site_url()."assets/templates/products/css/ich.css"; 
 		$vars['menu'] = "devices"; 
 		// $vars['not_show_footer'] = true;
-		$vars['layout'] = 'main2';
+		$vars['layout'] = "product_main"; 
 
 		$this->fuel->pages->render("index",$vars);
 	}
@@ -55,10 +69,10 @@ class Series extends CI_Controller {
 		$lang_code = $this->uri->segment(1);
 		 
 		$vars['views'] = 'xt';		    
-		$vars['css'] = site_url()."assets/templates/products/css/xt.css"; 
+		// $vars['css'] = site_url()."assets/templates/products/css/xt.css"; 
 		$vars['menu'] = "devices"; 
 		// $vars['not_show_footer'] = true;
-		$vars['layout'] = 'main2';
+		$vars['layout'] = "product_main"; 
 		$this->fuel->pages->render("index",$vars);
 	}
 
@@ -70,9 +84,61 @@ class Series extends CI_Controller {
 
 	    $mask_menu = $this->code_model->get_mask_menu();
 
+	    // $wArray = array();
+	    // $products = array();
+
+	    // $w210 = new stdClass();
+	    // $w210->id = 'w210';
+	    // $w210->img = '';
+
+	    // array_push($wArray, $w210);
+
+	    // $w220 = new stdClass();
+	    // $w220->id = 'w220';
+	    // $w220->img = '';
+
+	    // array_push($wArray, $w220);
+
+	    // $w230 = new stdClass();
+	    // $w230->id = 'w230';
+	    // $w230->img = '';
+
+	    // array_push($wArray, $w230);
+
+	    // $products = array_merge($wArray, $products);
+
 	    foreach ($mask_menu as $key => $value) {
-	    	$value->products = $this->code_model->get_products_list($value->code_id);
+	    	$value->products = array();// $this->code_model->get_products_list($value->code_id); 
+	    	$product_list = $this->code_model->get_products_list($value->code_id); 
+	    	if (isset($product_list) && sizeof($product_list) > 0) {
+	    		$value->products = $product_list;
+	    	}
+	    	if ($value->code_id == '658') 
+            {            	
+			    $w210 = new stdClass();
+			    $w210->id = 'w210';
+			    $w210->img = '/templates/img/apex/nm.png';
+			    array_push($value->products, $w210);
+            }else if($value->code_id == '659')  
+            {
+			    $w220 = new stdClass();
+			    $w220->id = 'w220';
+			    $w220->img = '/templates/img/apex/ffm.png';
+			    array_push($value->products, $w220);
+            }else if($value->code_id == '660')  
+            {
+			    $w230 = new stdClass();
+			    $w230->id = 'w230';
+			    $w230->img = '/templates/img/apex/npm.png';
+			    array_push($value->products, $w230);
+            }
+                                
+	    	// $products = array_merge($products, $productlist);
 	    }
+
+	    // $value->products = $products;
+	    // print_r($mask_menu);
+	    // die;
 	    
 		$vars['mask_menu'] = $mask_menu;	
 		 
@@ -94,7 +160,7 @@ class Series extends CI_Controller {
 		$vars['product'] = $this->code_model->get_product($id);
 		$vars['feature'] = 'masks';		 
 		$vars['menu'] = "devices"; 
-		$vars['layout'] = "product_main"; 
+		$vars['layout'] = "product_main2"; 
 		// $vars['not_show_footer'] = true;
 		$this->fuel->pages->render("index",$vars);
 	}
@@ -104,10 +170,10 @@ class Series extends CI_Controller {
 		$lang_code = $this->uri->segment(1);
 		 
 		$vars['views'] = 'w210';		    
-		$vars['css'] = site_url()."assets/templates/products/css/w210.css"; 
+		// $vars['css'] = site_url()."assets/templates/products/css/w210.css"; 
 		$vars['menu'] = "masks"; 
 		// $vars['not_show_footer'] = true;
-		$vars['layout'] = 'main2';
+		$vars['layout'] = "product_main"; 
 		$this->fuel->pages->render("index",$vars);
 	}
 
@@ -116,10 +182,10 @@ class Series extends CI_Controller {
 		$lang_code = $this->uri->segment(1);
 		 
 		$vars['views'] = 'w220';		    
-		$vars['css'] = site_url()."assets/templates/products/css/w220.css"; 
+		// $vars['css'] = site_url()."assets/templates/products/css/w220.css"; 
 		$vars['menu'] = "masks"; 
 		// $vars['not_show_footer'] = true;
-		$vars['layout'] = 'main2';
+		$vars['layout'] = "product_main"; 
 		$this->fuel->pages->render("index",$vars);
 	}
 
@@ -128,10 +194,10 @@ class Series extends CI_Controller {
 		$lang_code = $this->uri->segment(1);
 		 
 		$vars['views'] = 'w230';		    
-		$vars['css'] = site_url()."assets/templates/products/css/w230.css"; 
+		// $vars['css'] = site_url()."assets/templates/products/css/w230.css"; 
 		$vars['menu'] = "masks"; 
 		// $vars['not_show_footer'] = true;
-		$vars['layout'] = 'main2';
+		$vars['layout'] = "product_main"; 
 		$this->fuel->pages->render("index",$vars);
 	}
 
@@ -146,7 +212,7 @@ class Series extends CI_Controller {
 		$vars['views'] = 'product';		   
 		$vars['product'] = $product;		   
 		$vars['series'] = $series;	     
-		$vars['css'] = site_url()."assets/templates/css/product_page.css";
+		// $vars['css'] = site_url()."assets/templates/css/product_page.css";
 		$this->fuel->pages->render("index",$vars);
 	}
 

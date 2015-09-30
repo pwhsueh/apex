@@ -89,9 +89,9 @@ foreach($lang_ary as $l)
 	$route["$l/device/ich"] = 'series/ich'; 
 	$route["$l/device/xt"] = 'series/xt'; 
 	$route["$l/masks"] = 'series/masks'; 
-	$route["$l/masks/w210"] = 'series/w210'; 
-	$route["$l/masks/w220"] = 'series/w220'; 
-	$route["$l/masks/w230"] = 'series/w230'; 
+	$route["$l/mask/w210"] = 'series/w210'; 
+	$route["$l/mask/w220"] = 'series/w220'; 
+	$route["$l/mask/w230"] = 'series/w230'; 
 	$route["$l/dealer"] = 'wheretobuy/dealer'; 
 	$route["$l/promotion"] = 'wheretobuy/promotion'; 
 	$route["$l/mask/(:num)"] = 'series/mask/$1'; 

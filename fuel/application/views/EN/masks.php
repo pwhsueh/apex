@@ -45,6 +45,7 @@
                   </div>
                 </div>
                  <?php if (isset($value->products) && sizeof($value->products)>0): ?>
+                
                 <div class="row">
                   <div class="tw-element waves-heading center col-md-12" style="" >
                     <div class="heading-container">

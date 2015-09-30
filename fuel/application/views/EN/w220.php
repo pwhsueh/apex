@@ -1,100 +1,4 @@
-<div id="fullpage"  style="position:absolute; z-index:1;">
-        <!-- page 1 -->
-        <div class="section active" id="w220-p1" style="z-index:0;">
-            <img src="<?php echo site_url() ?>assets/templates/products/pic/products/w220-01.png" class="fullbg" alt=""/>
-            <div class="txt" id="w220-p1-txt">
-                <h1>Don't Get Lost</h1>
-                <h2>In The Mask Maze</h2>
-            </div>
-        </div>
-        
-        <!-- page 2 -->
-        <div class="section" id="w220-p2" style="z-index:1;">
-            <div class="txt" id="w220-p2-txt">
-                <h1>Built-in Pressure Or</h1>
-                <h1>Oxygen Port</h1>
-            </div>
-            <div class="pic" id="w220-p2-pic-1">
-                <img src="<?php echo site_url() ?>assets/templates/products/pic/products/w220-02-2.png"/>
-            </div>
-            <div class="pic" id="w220-p2-pic-2">
-                <img src="<?php echo site_url() ?>assets/templates/products/pic/products/w220-02-3.png"/>
-            </div>
-        </div>
-        
-        <!-- page 3 -->
-        <div class="section" id="w220-p3" style="z-index:2;">
-            <img src="<?php echo site_url() ?>assets/templates/products/pic/products/bg.png" class="bg" alt=""/>
-            <div class="pic" id="w220-p3-pic-1">
-                <img src="<?php echo site_url() ?>assets/templates/products/pic/products/w220-03-1.png"/>
-            </div>
-            <div class="pic" id="w220-p3-pic-2">
-                <img src="<?php echo site_url() ?>assets/templates/products/pic/products/w220-03-2.png"/>
-            </div>
-            <div class="pic" id="w220-p3-pic-3">
-                <img src="<?php echo site_url() ?>assets/templates/products/pic/products/w220-03-3.png"/>
-            </div>
-            <div class="txt" id="w220-p3-txt">
-                <h1>Soft Connection Tubing</h1>
-                <h1>With Better Flexibility</h1>
-            </div>
-        </div>
-        
-        <!-- page 4 -->
-        <div class="section" id="w220-p4" style="z-index:3;">
-            <img src="<?php echo site_url() ?>assets/templates/products/pic/products/bg.png" class="bg" alt=""/>
-            <div class="pic" id="w220-p4-pic-1">
-                <img src="<?php echo site_url() ?>assets/templates/products/pic/products/w220-04-1.png"/>
-            </div>
-            <div class="pic" id="w220-p4-pic-2">
-                <img src="<?php echo site_url() ?>assets/templates/products/pic/products/w220-04-2.png"/>
-            </div>
-            <div class="txt" id="w220-p4-txt">
-                <h1>Headgear Clip</h1>
-                <h1>For Single Handed</h1> 
-                <h1>Operation</h1>
-            </div>
-        </div>
-        
-        <!-- page 5 -->
-        <div class="section" id="w220-p5" style="z-index:4;">
-            <img src="<?php echo site_url() ?>assets/templates/products/pic/products/w220-05.jpg" class="fullbg" alt=""/>
-        </div>
-
-        <!-- page 7 -->
-        <div class="section" id="w220-p7" style="z-index:6;">
-            <div class="txt" id="w220-p7-txt-1">
-                <h2>Specification</h2>
-            </div>
-            <div class="txt" id="w220-p7-txt-2">
-                <h3>WiZARD 220</h3>
-            </div>
-            <div class="pic" id="w220-p7-pic">
-                <img src="<?php echo site_url() ?>assets/templates/products/pic/products/w220-07.png"/>
-            </div>
-            <div class="txt" id="w220-p7-txt-3">
-                <p>There's a lot of masks out there; choosing one can be a daunting exercise. Di erent materials, ¬t features, shapes and sizes - how do you know which one to pick? And then there's the cost. The replacement parts necessary to keep your equipment performing well can cost a small fortune.</p>
-            </div>
-        </div>
-        
-        <!-- page 6 -->
-        <div class="section" id="w220-p6" style="z-index:5;">
-            <div class="txt" id="w220-p6-txt">
-                <h2>Accessories</h2>
-            </div>
-            <div class="pic" id="w220-p6-pic-1">
-                <img src="<?php echo site_url() ?>assets/templates/products/pic/products/w220-06-1.png"/>
-            </div>
-            <div class="pic" id="w220-p6-pic-2">
-                <img src="<?php echo site_url() ?>assets/templates/products/pic/products/w220-06-2.png"/>
-            </div>
-            <div class="pic" id="w220-p6-pic-3">
-                <img src="<?php echo site_url() ?>assets/templates/products/pic/products/w220-06-3.png"/>
-            </div>
-        </div>
-    </div>
-
-    <script type="text/javascript">
+<script type="text/javascript">
         $(document).ready(function () {
             $('#fullpage').fullpage({
                 navigation: true,
@@ -121,4 +25,101 @@
                 return false;
             });
         });
-    </script>  
+    </script>
+    <link rel="stylesheet" type="text/css" href="<?php echo site_url()?>assets/templates/product/css/w220.css"/>
+<div id="fullpage"  style="position:absolute; z-index:1;"> 
+      <!-- page 1 -->
+      <div class="section active" id="w220-p1" style="z-index:0;"> <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220440.jpg" class="fullbg mobile_position_1" alt=""/>
+    <div class="txt" id="w220-p1-txt">
+          <h1 style="margin-bottom:20px;">WiZARD 220</h1>
+          <h3>Don't get lost in<br/>
+        the mask maze</h3>
+        </div>
+  </div>
+      
+      <!--        <div class="section" id="w220-p1-1" style="z-index:0;">
+            <div class="txt" id="w220-p1-txt" style="width:80%">
+                <h1>W220 Series</h1>
+                <h3>Rejuvenate in Style</h3>
+                <p>The latest generation of APEX Auto CPAP machines combines important and necessary features you need in a stylish package.  And thanks to its unique integrated humidifier chamber it takes up little room on your nightstand.  With an easy to use menu to fine-tune your personal requirements the iCH offers market leading therapy at a surprisingly affordable price.</p>
+            </div>
+        </div>--> 
+      
+      <!-- page 2 -->
+      <div class="section" id="w220-p2" style="z-index:1;"> <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-05.jpg" width="100%" style="opacity:0; height:100%" alt=""/>
+    <div class="txt" id="w220-p2-txt">
+          <h1>Pressure</h1>
+          <h1>measurement</h1>
+          <h1>opening</h1>
+        </div>
+    <div class="pic" id="w220-p2-pic-1"> <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-02-2.png"/> </div>
+    <div class="pic" id="w220-p2-pic-2"> <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-02-3.png"/> </div>
+  </div>
+      
+      <!-- page 3 -->
+      <div class="section" id="w220-p3" style="z-index:2;">
+    <div class="pic" id="w220-p3-pic-1"> <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-03-1.png"/> </div>
+    <div class="pic" id="w220-p3-pic-2"> <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-03-3.png"/> </div>
+    <div class="pic" id="w220-p3-pic-3"> <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-03-3-2.png"/> </div>
+    <div class="pic" id="w220-p3-pic-4"> <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-03-2.png"/> </div>
+    <div class="txt" id="w220-p3-txt">
+          <h1>Soft connection</h1>
+          <h1>tubing with</h1>
+          <h1>better flexibility</h1>
+        </div>
+  </div>
+      
+      <!-- page 4 -->
+      <div class="section" id="w220-p4" style="z-index:3;">  <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-05.jpg" width="100%" style="opacity:0; height:100%" alt=""/>
+    <div class="pic" id="w220-p4-pic-2-1" style="z-index:1"> <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-04-2-1.png"/> </div>
+    <div class="pic" id="w220-p4-pic-1" style="z-index:2">   <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-04-1.png"/> </div>
+    <div class="pic" id="w220-p4-pic-2" style="z-index:3">   <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-04-2.png"/> </div>
+    <div class="txt" id="w220-p4-txt">
+          <h1>Headgear clip for single</h1>
+          <h1>handed operation</h1>
+        </div>
+  </div>
+      
+
+      <!-- page 5 -->
+      
+      <div class="section" id="w220-p6" style="z-index:1; overflow:hidden;">
+    <div class="txt" id="w220-p6-txt">
+          <h2>Accessories</h2>
+        </div>
+    <div class="pic" id="w220-p6-pic-1" style="height:60%;"> 
+          
+          <!--<span class="arrow_toggle"><i class="fa fa-arrow-left"></i></span>--> 
+          
+          <img class="pc_photo_left pc_photo_left_close" src="<?php echo site_url()?>assets/templates/product/pic/products/w220-06-1.png"/> 
+          <img class="pc_photo_left pc_photo_left_open" src="<?php echo site_url()?>assets/templates/product/pic/products/w220-06-1.png"/>
+          <ul class="mobile_product_info">
+        <li><span>1</span>User Manual</li>
+        <li><span>2</span>Small Silicone Tube</li>
+        <li><span>3</span>Cushion(L)</li>
+        <li><span>4</span>Cushion(S)</li>
+        <li><span>5</span>Cushion(M)</li>
+        <li><span>6</span>Head Gear</li>
+        <li><span>7</span>Buckle</li>
+        <li><span>8</span>Frame for S/SW/MW cushion++</li>
+        <li><span>9</span>Swivel</li>
+        <li><span>10</span>Frame for M/L/LW cushion++</li>
+        <li><span>11</span>Swivel</li>
+        <li><span>12</span>Cushion(LW)</li>
+        <li><span>13</span>Cushion(MW)</li>
+        <li><span>14</span>Cushion(SW)</li>
+        <li><span>15</span>Forehead pad(std)</li>
+        <li><span>16</span>Forehead Pad(H1)*</li>
+        <li><span>17</span>Forehead pad(H2)</li>
+        <li>*Optional</li>
+        <li>++Only one Frame &amp; Cushion is available in a single package. Frame &amp; Cushion size depends on your order.</li>
+      </ul>
+        </div>
+  </div>
+      
+      <!-- page 6 -->
+      <div class="section" id="w220-p5" style="z-index:5;"> 
+        <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-05.jpg" class="fullbg mobile_position_6" alt=""/> </div>
+    </div>
+    <a href="<?php echo site_url().'EN/masks' ?>" class="toggle-footer-btn1"><i style="font-size:12px;" class="fa fa-chevron-left"></i></a> 
+

@@ -46,7 +46,34 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo site_url()?>assets/templates/product/js/jquery.fullPage.js"></script>
     <script type="text/javascript" src="<?php echo site_url()?>assets/templates/product/js/responsiveslides.min.js"></script>
-    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                navigation: true,
+                navigationColor: '#EC0928',
+                scrollingSpeed: 700,
+                animateAnchor: false,
+                controlArrows: false,
+                sectionsColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#F1F1F1', '#FFFFFF'],
+                anchors: ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7']
+            });
+            
+            $('.toggle-footer-btn').click(function() {
+                $(this).html($(this).html() == '+' ? '-' : '+');
+                if($(this).html() == '-') {  
+                    $('.toggle-footer-btn, #footer').animate({
+                        bottom: "+=100"
+                    });
+                }
+                else {
+                    $('.toggle-footer-btn, #footer').animate({
+                        bottom: "-=100"
+                    });
+                }
+                return false;
+            });
+        });
+    </script>
     </head>
 
     <body style="background-color:#999;">
