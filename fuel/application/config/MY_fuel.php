@@ -26,7 +26,7 @@ $config['modules_allowed'] = array(
 	'user_guide',
 	'news',
 	'products',
-	// 'sup',
+	'sup',
 	// 'casehelp',
 	// 'case',
 	'codekind',

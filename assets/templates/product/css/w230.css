@@ -317,14 +317,34 @@ p {
 	line-height: 2.5vh;
 	color: #B3B3B3;
 }
-#w230-p1-txt {
-	text-align: center;
-	line-height: 10vh;
+
+#w230-p0-txt {
+	line-height: 4vh;
 	width: 100%;
 	top: 5%;
-	left: 10%;
+    text-align: center;
 }
-#w230-p2-pic {
+
+#w230-p1-txt {
+    left: 9%;
+	line-height: 4vh;
+	width: 100%;
+	top: 5%;
+}
+
+#w230-p1-txt p {
+    left: 9%;
+    text-align: justify;
+	line-height: 3vh;
+	width: 100%;
+	top: 5%;
+}
+#w230-p1-txt h3 {
+    left: 9%;
+    text-align: center;
+	width: 100%;
+}
+     #w230-p2-pic {
 	width: 100%;
 	left: 0;
 	bottom: 70px;

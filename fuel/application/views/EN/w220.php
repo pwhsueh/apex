@@ -49,8 +49,8 @@
       <div class="section" id="w220-p2" style="z-index:1;"> <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-05.jpg" width="100%" style="opacity:0; height:100%" alt=""/>
     <div class="txt" id="w220-p2-txt">
           <h1>Pressure</h1>
-          <h1>measurement</h1>
-          <h1>opening</h1>
+          <h1>Monitoring</h1>
+          <h1>Port</h1>
         </div>
     <div class="pic" id="w220-p2-pic-1"> <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-02-2.png"/> </div>
     <div class="pic" id="w220-p2-pic-2"> <img src="<?php echo site_url()?>assets/templates/product/pic/products/w220-02-3.png"/> </div>

@@ -9,7 +9,7 @@
 	<div class="row" style="margin:10px 10px">
 		<div class="span12">
 			<ul class="breadcrumb">
-			  <li>位置：<a href="<?php echo $module_uri?>">Support 列表</a></li>
+			  <li>位置：<a href="<?php echo $module_uri?>">Partner List</a></li>
 			  <li class="active"><?php echo $view_name?></li>
 			</ul>
 		</div>
@@ -22,63 +22,47 @@
 				</header>
 				<div class="panel-body">
 					<div class="form-horizontal tasi-form">						 
-						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">語言</label>
-							<div class="col-sm-4">
-								 <select name="lang" id="lang">
-									<?php
-										if(isset($lang)):
-									?>	
-									<?php foreach($lang as $key=>$rows):?>
-										<option value="<?php echo $rows->code_key ?>" ><?php echo $rows->code_name ?></option>
-									<?php endforeach;?>
-									<?php endif;?>
-								</select>
-							</div>
-						</div>	  
-						<!-- <div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Type</label>
-							<div class="col-sm-4">
-								<select name="type" id="type">
-									 
-								</select>
-							</div>
-						</div> -->	   
+						   
+					  	
 						<div class="form-group">
 							<label class="col-sm-2 col-sm-2 control-label">Title</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="title" value='<?php echo $support->title ?>' /> 
 							</div>
-						</div> 		
-						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Content</label>
-							<div class="col-sm-4"> 
-								<textarea class="form-control" rows="3" id="content" name="content"><?php echo htmlspecialchars_decode($support->content); ?></textarea>
-							</div>
-						</div>			  
-						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">Image[200*200] </label>
+						</div> 				
+						 <div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Latitude</label>
 							<div class="col-sm-4">
-								<input type="file" class="form-control" name="img" value=""> 
-								<input type="hidden" value="<?php echo $support->img; ?>" name="exist_img" />	
-								<?php if (isset($support->img) && !empty($support->img)): ?>
-									<img src="<?php echo site_url()."assets/".$support->img; ?>" />
-								<?php endif ?> 
+								<input type="text" class="form-control" name="lat"  value='<?php echo $support->lat ?>'> 
 							</div>
-						</div>		
+						</div> 
 						<div class="form-group">
-							<label class="col-sm-2 col-sm-2 control-label">File[最大200MB]</label>
-							<div class="col-sm-4"> 
-								<input type="file" class="form-control" name="file_url" value=""> 
-								<input type="hidden" value="<?php echo $support->file_url; ?>" name="exist_file_url" />	
-								<?php if (isset($support->file_url) && $support->file_url != "" ): ?> 
-									<a href="<?php echo site_url()."assets/".$support->file_url; ?>" target="_blank" >File</a>
-								<?php endif ?> 
+							<label class="col-sm-2 col-sm-2 control-label">Longitude</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" name="lng"  value='<?php echo $support->lng ?>'> 
 							</div>
-						</div>	 	
+						</div> 
 						<div class="form-group">
-							<div class="col-sm-12" style="text-align:center">
-								<input type="hidden" name="type" value="<?php echo $support->type ?>" />
+							<label class="col-sm-2 col-sm-2 control-label">Address 1</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" name="address1"  value='<?php echo $support->address1 ?>'> 
+							</div>
+						</div> 
+						<div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Address 2</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" name="address2"  value='<?php echo $support->address2 ?>'> 
+							</div>
+						</div> 
+						<div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Tel</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" name="tel"  value='<?php echo $support->tel ?>'> 
+							</div>
+						</div> 
+						 
+						<div class="form-group">
+							<div class="col-sm-12" style="text-align:center"> 
 								<button type="submit" class="btn btn-info">編輯</button>
 								<button type="button" class="btn btn-danger" onClick="aHover('<?php echo $module_uri?>')">取消</button>
 							</div>
@@ -91,8 +75,7 @@
 
 </section>
 
-<?php echo js($this->config->item('sup_javascript'), 'sup')?>
-<?php echo js($this->config->item('sup_ck_javascript'), 'sup')?>
+<?php echo js($this->config->item('sup_javascript'), 'sup')?> 
  
 <script>
 	function aHover(url)
@@ -102,42 +85,7 @@
 
 	jQuery(document).ready(function($) {
 
-		var config =
-        {
-            height: 380,
-            width: 850,
-            linkShowAdvancedTab: false,
-            scayt_autoStartup: false,
-            enterMode: Number(2),
-            toolbar_Full: [
-            				[ 'Styles', 'Format', 'Font', 'FontSize', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ],
-            				['Bold', 'Italic', 'Underline', '-', 'NumberedList', 'BulletedList'],
-                            ['Link', 'Unlink'], ['Undo', 'Redo', '-', 'SelectAll'], [ 'TextColor', 'BGColor' ],['Checkbox', 'Radio', 'Image' ], ['Source']
-                          ]
-
-        };
-		$( 'textarea#content' ).ckeditor(config); 
-		
- 	// 	$("#lang").change(function() { 
-  // 		   $('#type').find('option').remove().end(); 
-  // 		   $.ajax({
-  //               url: '<?php echo site_url(); ?>' + 'fuel/sup/type/' + $(this).val() ,
-  //               cache: false
-		//         }).done(function (data) {            
-	 //                var obj = $.parseJSON(data);
-	 //                if (obj != null) {	                	
-		// 				for (var i = 0 ;i<obj.length;i++) { 
-		//    					$('#type').append(
-		// 				        $("<option></option>").text(obj[i].code_name).val(obj[i].code_id)
-		// 				   );
-		// 				};
-		// 			 	 $("#type").val('<?php echo $support->type ?>');
-	 //                }
-		// 		});
-		// });
-
- 	// 	$("#lang").val('<?php echo $support->lang ?>');
-		// $("#lang").trigger('change'); 
+	 
 
 	});
 </script>

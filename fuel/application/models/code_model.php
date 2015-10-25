@@ -220,6 +220,41 @@ class Code_model extends CI_Model {
         return;
     }
 
+    public function get_partner_list($search_keyword = ""){         
+       
+       if (!empty($search_keyword)) {
+           $sql = @"select * from mod_partner a where  (a.tel like '%$search_keyword%' OR a.title like '%$search_keyword%' OR a.address1 like '%$search_keyword%' OR a.address2 like '%$search_keyword%') ";
+
+       }else{
+           $sql = @"select * from mod_partner ";
+
+       }
+         
+        
+        $query = $this->db->query($sql);
+        // echo $sql;//exit;
+        if($query->num_rows() > 0)
+        {
+            $result = $query->result();
+
+            return $result;
+        }
+    }
+
+     public function get_partner_keyword($search_keyword){         
+         
+         
+        $sql = @"select * from mod_partner a where (a.tel like '%$search_keyword%' OR a.title like '%$search_keyword%' OR a.address1 like '%$search_keyword%' OR a.address2 like '%$search_keyword%')";
+        $query = $this->db->query($sql);
+        // echo $sql;//exit;
+        if($query->num_rows() > 0)
+        {
+            $result = $query->result();
+
+            return $result;
+        }
+    }
+
     public function get_news_count($lang,$type ){ 
         $sql = @"select count(*) AS total from mod_news where type = '$type' and lang='$lang'";
         $query = $this->db->query($sql);

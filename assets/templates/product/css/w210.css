@@ -688,10 +688,9 @@ p {
 }
 #w210-p1-txt {
 	text-align: center;
-	line-height: 4vh;
+	line-height: 1vh;
 	width: 100%;
-	top: 5%;
-	left: 10%;
+	top: 10%;
 }
 #w210-p2-txt {
 	text-align: center;

@@ -23,24 +23,38 @@ class Sup_manage extends Fuel_base_controller {
 	{
 		$base_url = base_url();
 
-		$search_type = $this->input->get_post('type'); 
-		$search_lang = $this->input->get_post('search_lang'); 
+		$search_keyword = $this->input->get_post('search_keyword'); 
+		 
 		
 		$filter = " WHERE 1=1  "; 
 
-		if (!empty($search_type)) {
-			$this->session->set_userdata('search_type', $search_type);
-		}else {
-			$search_type = $this->session->userdata('search_type'); 
-		} 
+		if ($search_keyword != "") {
+			$this->session->set_userdata('search_keyword', $search_keyword);
+		}else{
+			if (!isset($search_keyword) ) {
+				$search_keyword = $this->session->userdata('search_keyword'); 
+				if ($search_keyword != "") {
+					$search_keyword = $search_keyword;
+				} 
+			}else{
+				$this->session->set_userdata('search_keyword', "");
+			}					
+		}
 
-		if (!empty($search_lang)) {
-			$this->session->set_userdata('search_lang', $search_lang);
-		}else {
-			$search_lang = $this->session->userdata('search_lang'); 			
-		} 
+		// if (!empty($search_lang)) {
+		// 	$this->session->set_userdata('search_lang', $search_lang);
+		// }else {
+		// 	$search_lang = $this->session->userdata('search_lang'); 			
+		// } 
+ 
+		// print_r($filter);
+		if (isset($search_keyword ) && !empty($search_keyword )) {
+			$filter .= " AND (a.tel like '%$search_keyword%' OR a.title like '%$search_keyword%' OR a.address1 like '%$search_keyword%' OR a.address2 like '%$search_keyword%')  ";
 
-		$filter .= " AND a.type = '$search_type' ";
+		}
+
+
+		// $filter .= " AND a.type = '$search_type' ";
 
 		// print_r($filter);
 		// die;
@@ -56,20 +70,17 @@ class Sup_manage extends Fuel_base_controller {
 
 	 
 		// $type = $this->codekind_manage_model->get_code_list_for_other_mod("NEWSTYPE");
-		$lang = $this->codekind_manage_model->get_code_list_for_other_mod("LANG_CODE");
-		$vars['lang'] = $lang;
+	 
  
 		 
-		$vars['search_type'] = $search_type;
-		$vars['search_lang'] = $search_lang;
-		$vars['total_rows'] = $total_rows; 
+		$vars['search_keyword'] = $search_keyword; 		$vars['total_rows'] = $total_rows; 
 		$vars['form_action'] = $base_url.'fuel/sup/lists';
 		$vars['form_method'] = 'POST';
 		$crumbs = array($this->module_uri => $this->module_name);
 		$this->fuel->admin->set_titlebar($crumbs);
 
 		$vars['page_jump'] = $this->pagination->create_links();
-		$vars['create_url'] = $base_url.'fuel/sup/create?type='.$search_type;
+		$vars['create_url'] = $base_url.'fuel/sup/create';
 		$vars['edit_url'] = $base_url.'fuel/sup/edit/';
 		$vars['del_url'] = $base_url.'fuel/sup/del/';
 		$vars['multi_del_url'] = $base_url.'fuel/sup/do_multi_del';
@@ -107,66 +118,67 @@ class Sup_manage extends Fuel_base_controller {
 	function do_create()
 	{
 		$post_arr = $this->input->post();  
-		$post_arr["content"] = htmlspecialchars($post_arr["content"]);	
+		// $post_arr["content"] = htmlspecialchars($post_arr["content"]);	
 		// print_r($post_arr);
 		// 	die;
 
+			$module_uri = base_url().$this->module_uri;
 		$success = $this->sup_manage_model->insert($post_arr);  
 
 		if($success)
 		{ 
-			$id = $this->sup_manage_model->get_last_insert_id(); 
-			$root_path = assets_server_path("support/$id/");
+// 			$id = $this->sup_manage_model->get_last_insert_id(); 
+// 			$root_path = assets_server_path("support/$id/");
 
-// print_r($root_path);
-// 			die;
+// // print_r($root_path);
+// // 			die;
 
-			if (!file_exists($root_path)) {
-			    mkdir($root_path, 0777, true);
-			}
+// 			if (!file_exists($root_path)) {
+// 			    mkdir($root_path, 0777, true);
+// 			}
 			 
-			$module_uri = base_url().$this->module_uri;
+// 			$module_uri = base_url().$this->module_uri;
 
-			$updateAry = array();
-			$updateAry["id"] = $id;
+// 			$updateAry = array();
+// 			$updateAry["id"] = $id;
 			 
-			$config['upload_path'] = $root_path;
-			$config['allowed_types'] = 'png';
-			$config['max_size']	= '9999';
-			$config['max_width']  = '0';
-			$config['max_height']  = '0';
+// 			$config['upload_path'] = $root_path;
+// 			$config['allowed_types'] = 'png';
+// 			$config['max_size']	= '9999';
+// 			$config['max_width']  = '0';
+// 			$config['max_height']  = '0';
 
-			$this->load->library('upload',$config); 
+// 			$this->load->library('upload',$config); 
 
 		
-			if ($this->upload->do_upload('img'))
-			{
-				$data = array('upload_data'=>$this->upload->data()); 
-				$updateAry["img"] = "support/$id/".$data["upload_data"]["file_name"];
-			} else{ 
-				$updateAry["img"] = '';				 
-			}  
+// 			if ($this->upload->do_upload('img'))
+// 			{
+// 				$data = array('upload_data'=>$this->upload->data()); 
+// 				$updateAry["img"] = "support/$id/".$data["upload_data"]["file_name"];
+// 			} else{ 
+// 				$updateAry["img"] = '';				 
+// 			}  
 
-			$config['upload_path'] = $root_path;
-			$config['allowed_types'] = '*';
-			$config['max_size']	= '200000';
-			$config['max_width']  = '0';
-			$config['max_height']  = '0';
+// 			$config['upload_path'] = $root_path;
+// 			$config['allowed_types'] = '*';
+// 			$config['max_size']	= '200000';
+// 			$config['max_width']  = '0';
+// 			$config['max_height']  = '0';
  
-			$this->upload->initialize($config);
+// 			$this->upload->initialize($config);
  
-			if ($this->upload->do_upload('file_url'))
-			{
-				$data = array('upload_data'=>$this->upload->data()); 
-				$updateAry["file_url"] = "support/$id/".$data["upload_data"]["file_name"];
-			} else{ 
-				$updateAry["file_url"] = '';				 
-			} 
+// 			if ($this->upload->do_upload('file_url'))
+// 			{
+// 				$data = array('upload_data'=>$this->upload->data()); 
+// 				$updateAry["file_url"] = "support/$id/".$data["upload_data"]["file_name"];
+// 			} else{ 
+// 				$updateAry["file_url"] = '';				 
+// 			} 
 
-			// print_r($updateAry);
-			// die;
+// 			// print_r($updateAry);
+// 			// die;
 
-			$this->sup_manage_model->update_file($updateAry); 
+// 			$this->sup_manage_model->update_file($updateAry); 
 
 			$this->comm->plu_redirect($module_uri, 0, "新增成功");
 			die();
@@ -214,51 +226,51 @@ class Sup_manage extends Fuel_base_controller {
 		$post_arr = $this->input->post(); 
 
 		$post_arr["id"] = $id;
-	 	$post_arr["content"] = htmlspecialchars($post_arr["content"]);	
+	 	// $post_arr["content"] = htmlspecialchars($post_arr["content"]);	
 
-		$root_path = assets_server_path("support/$id/");
+		// $root_path = assets_server_path("support/$id/");
 
-		if (!file_exists($root_path)) {
-		    mkdir($root_path, 0777, true);
-		}
+		// if (!file_exists($root_path)) {
+		//     mkdir($root_path, 0777, true);
+		// }
 		 
 		$module_uri = base_url().$this->module_uri;
 		  
-		$config['upload_path'] = $root_path;
-		$config['allowed_types'] = 'png';
-		$config['max_size']	= '9999';
-		$config['max_width']  = '1024';
-		$config['max_height']  = '768';
-
-		$this->load->library('upload',$config); 
-
-	 
-		if ($this->upload->do_upload('img'))
-		{
-			$data = array('upload_data'=>$this->upload->data()); 
-			$post_arr["img"] = "support/$id/".$data["upload_data"]["file_name"];
-		} else{ 
-			$post_arr["img"] = $post_arr["exist_img"];				 
-		} 
-		 
-
-		$config['upload_path'] = $root_path;
-		$config['allowed_types'] = '*';
-		$config['max_size']	= '200000';
-		$config['max_width']  = '0';
-		$config['max_height']  = '0';
+		// $config['upload_path'] = $root_path;
+		// $config['allowed_types'] = 'png';
+		// $config['max_size']	= '9999';
+		// $config['max_width']  = '1024';
+		// $config['max_height']  = '768';
 
 		// $this->load->library('upload',$config); 
-		$this->upload->initialize($config);
 
-		if ($this->upload->do_upload('file_url'))
-		{
-			$data = array('upload_data'=>$this->upload->data()); 
-			$post_arr["file_url"] = "support/$id/".$data["upload_data"]["file_name"];
-		} else{ 
-			echo $this->upload->display_errors();
-			$post_arr["file_url"] = $post_arr["exist_file_url"];			 
-		} 
+	 
+		// if ($this->upload->do_upload('img'))
+		// {
+		// 	$data = array('upload_data'=>$this->upload->data()); 
+		// 	$post_arr["img"] = "support/$id/".$data["upload_data"]["file_name"];
+		// } else{ 
+		// 	$post_arr["img"] = $post_arr["exist_img"];				 
+		// } 
+		 
+
+		// $config['upload_path'] = $root_path;
+		// $config['allowed_types'] = '*';
+		// $config['max_size']	= '200000';
+		// $config['max_width']  = '0';
+		// $config['max_height']  = '0';
+
+		// // $this->load->library('upload',$config); 
+		// $this->upload->initialize($config);
+
+		// if ($this->upload->do_upload('file_url'))
+		// {
+		// 	$data = array('upload_data'=>$this->upload->data()); 
+		// 	$post_arr["file_url"] = "support/$id/".$data["upload_data"]["file_name"];
+		// } else{ 
+		// 	echo $this->upload->display_errors();
+		// 	$post_arr["file_url"] = $post_arr["exist_file_url"];			 
+		// } 
 
 		// print_r($post_arr);
 		// die;

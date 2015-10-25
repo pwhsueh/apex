@@ -45,7 +45,7 @@
                 |
                 <a href="privacy.html">Privacy</a>
             </p>
-            <p class="footercopyright">Copyright ©2015 APEX MEDICAL CORP. All right reserved</p>
+            <p class="footercopyright">Copyright ©2015 APEX MEDICAL CORP. All rights reserved</p>
             <?php //echo fuel_block('footer_EN') ?>
         </div>
     

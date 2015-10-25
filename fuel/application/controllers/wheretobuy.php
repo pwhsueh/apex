@@ -17,10 +17,11 @@ class Wheretobuy extends CI_Controller {
 		$typeParter = 647;
 		   
 		$resultsDealer = $this->code_model->get_news_list(0, 999,$lang_code, $typeDealer);
-		$resultsParter = $this->code_model->get_news_list(0, 999,$lang_code, $typeParter);
+		$resultsParter = $this->code_model->get_partner_list();
 		 
 		$vars['resultsDealer'] = $resultsDealer;	
 		$vars['resultsParter'] = $resultsParter;
+		$vars['search_keyword'] = '';
 
 		$this->fuel->pages->render("index", $vars);
 	}
@@ -45,5 +46,29 @@ class Wheretobuy extends CI_Controller {
 		// $vars['page_jump'] = $this->pagination->create_links();
 		$this->fuel->pages->render("index",$vars);
 	}
+
+	function search_partner(){
+		$lang_code = $this->uri->segment(1);	
+
+		$search_keyword = $this->input->get_post('search_keyword'); 
+
+		$vars['views'] = 'location';
+		$vars['menu'] = "wheretobuy"; 
+		// $vars['css'] = site_url()."assets/templates/css/location.css";
+		$typeDealer = 648;
+		$typeParter = 647;
+		    
+		$resultsDealer = $this->code_model->get_news_list(0, 999,$lang_code, $typeDealer);
+
+		$resultsParter = $this->code_model->get_partner_list($search_keyword);
+		 
+		$vars['resultsDealer'] = $resultsDealer;	
+		$vars['resultsParter'] = $resultsParter;	
+		$vars['search_keyword'] = $search_keyword;
+
+		$this->fuel->pages->render("index", $vars);
+	}
+
+	
 	
 }

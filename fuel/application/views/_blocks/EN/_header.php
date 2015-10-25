@@ -29,12 +29,12 @@
             <li><a href="<?php echo site_url() ?>">Home</a></li>
             
             <li><a href="<?php echo site_url() ?>EN/devices">Devices</a>     
-              <?php $products = $this->code_model->get_products_list('656'); ?>
+              <?php $devices = $this->code_model->get_products_list('656'); ?>
                   <?php //if (isset($products)): ?>
                     <ul class="sub-menu"> 
                         <li><a href="<?php echo site_url() ?>EN/device/ich">iCH SERIES</a></li> 
                         <li><a href="<?php echo site_url() ?>EN/device/xt">XT SERIES</a></li> 
-                    <?php foreach ($products as $key2 => $value2): ?>
+                    <?php foreach ($devices as $key2 => $value2): ?>
                         <li><a href="<?php echo site_url() ?>EN/device/<?php echo $value2->id ?>"><?php echo $value2->title ?></a></li>
                     <?php endforeach ?>
                     </ul>
@@ -113,8 +113,8 @@
           <li><a href="<?php echo site_url() ?>EN/about">About APEX</a></li>
           <li><a href="<?php echo site_url() ?>EN/Contact_front">Contact US</a></li>
           <li><a href="<?php echo site_url() ?>EN/News_front">News</a></li>
-          <li><a href="<?php echo site_url() ?>EN/TeamOfUse">Term of use</a></li>
-          <li><a href="<?php echo site_url() ?>EN/Privacy">Privacy</a></li>
+          <!-- <li><a href="<?php echo site_url() ?>EN/TeamOfUse">Terms of use</a></li>
+          <li><a href="<?php echo site_url() ?>EN/Privacy">Privacy</a></li> -->
             
           </ul>
         </div>
@@ -130,13 +130,48 @@
           <li><a href="<?php echo site_url() ?>">Home</a></li>
           <li><a href="<?php echo site_url() ?>EN/devices">Devices</a>
             <ul class="sub-menu">
-              <li><a href="<?php echo site_url() ?>EN/product/ich.html">iCH SERIES</a></li>
-              <li><a href="<?php echo site_url() ?>EN/product/xt.html">XT SERIES</a></li>
+              <!-- <li><a href="<?php echo site_url() ?>EN/product/ich.html">iCH SERIES</a></li>
+              <li><a href="<?php echo site_url() ?>EN/product/xt.html">XT SERIES</a></li> -->
+              <li><a href="<?php echo site_url() ?>EN/device/ich">iCH SERIES</a></li> 
+              <li><a href="<?php echo site_url() ?>EN/device/xt">XT SERIES</a></li> 
+          <?php foreach ($devices as $key2 => $value2): ?>
+              <li><a href="<?php echo site_url() ?>EN/device/<?php echo $value2->id ?>"><?php echo $value2->title ?></a></li>
+          <?php endforeach ?>
             </ul>
           </li>
           <li><a href="mask.html">Masks</a>
             <ul class="sub-menu">
-              <li><a href="#">Nasal</a>
+              <?php if (isset($mask_menu)): ?>
+                 
+                <?php foreach ($mask_menu as $key => $value): ?>
+                
+                  <li><a href="#"><?php echo $value->code_name ?></a>
+
+                  <?php $products = $this->code_model->get_products_list($value->code_id); ?>
+                  
+                    <ul class="sub-menu">
+                      <?php if ($value->code_id == '658'): ?>
+                          <li><a href="<?php echo site_url() ?>EN/mask/w210">WIZARD 210</a></li>
+                      <?php elseif($value->code_id == '659'): ?>
+                          <li><a href="<?php echo site_url() ?>EN/mask/w220">WIZARD 220</a></li>
+                      <?php elseif($value->code_id == '660'): ?>
+                          <li><a href="<?php echo site_url() ?>EN/mask/w230">WIZARD 230</a></li>
+                      <?php endif ?>
+                    <?php foreach ($products as $key2 => $value2): ?>
+                        <li><a href="<?php echo site_url() ?>EN/mask/<?php echo $value2->id ?>"><?php echo $value2->title ?></a></li>
+                    <?php endforeach ?>
+                    </ul>
+                
+                   <!--  
+                      <li><a href="<?php echo site_url() ?>EN/Tproduct/w230.html">WIZARD 230A</a></li>
+                      <li><a href="<?php echo site_url() ?>EN/Tproduct/w230.html">WIZARD 230B</a></li>
+                    </ul> -->
+                  </li>
+
+                <?php endforeach ?>
+             
+              <?php endif ?>
+              <!-- <li><a href="#">Nasal</a>
                 <ul class="sub-menu">
                   <li><a href="<?php echo site_url() ?>EN/product/w210.html">WIZARD 210A</a></li>
                   <li><a href="<?php echo site_url() ?>EN/product/w210.html">WIZARD 210B</a></li>
@@ -153,7 +188,7 @@
                   <li><a href="<?php echo site_url() ?>EN/product/w230.html">WIZARD 230A</a></li>
                   <li><a href="<?php echo site_url() ?>EN/product/w230.html">WIZARD 230B</a></li>
                 </ul>
-              </li>
+              </li> -->
             </ul>
           </li>
           <li><a href="#">Where to buy</a>

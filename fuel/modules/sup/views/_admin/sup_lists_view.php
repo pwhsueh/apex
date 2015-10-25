@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="span12">
 			<ul class="breadcrumb">
-			  <li>位置：Support 列表</li>
+			  <li>位置：Partner 列表</li>
 			</ul>
 		</div>
 	</div> 
@@ -18,30 +18,13 @@
 	    <div class="col-md-12 sheader"> 
 			<div class="form-inline" style="margin-top:10px">
 				<div class="form-group">
-					<label class="col-sm-4 control-label" >
-						Lang
+					 
+				    <label class="col-sm-4 control-label" >
+						Keyword
 					</label>
 				    <div class="col-sm-8">
-				       <select name="search_lang" id="lang">
-							<?php
-								if(isset($lang)):
-							?>	
-							<?php   foreach($lang as $key=>$rows):?>
-								<option value="<?php echo $rows->code_key ?>" <?php if ($search_lang == $rows->code_key): ?>
-									selected
-								<?php endif ?>><?php echo $rows->code_name ?></option>
-							<?php endforeach;?>
-							<?php endif;?>
-						</select>
+				        <input type="text" name="search_keyword" value="<?php echo $search_keyword ?>" />
 				    </div>
-				   <!--  <label class="col-sm-4 control-label" >
-						Type
-					</label>
-				    <div class="col-sm-8">
-				        <select name="search_type" id="type">
-							 
-						</select>
-				    </div> -->
 				</div>
 			</div>  
 			<div class="form-inline" style="margin-top:10px" >
@@ -79,10 +62,9 @@
 							</label>
 						</th>
 						<th>編號</th>
-						<th>語言</th>
 						<th>Title</th>
-						<th>Type</th> 
-						<th>圖片</th> 
+						<th>Latitude</th> 
+						<th>Logitude</th> 
 						<th>刪除</th>
 					</tr>
 				</thead>
@@ -101,15 +83,9 @@
 							</label>
 						</td> 
 					    <td><?php echo $rows->id?></td> 
-					    <td><?php echo $rows->lang?></td> 
 						<td><?php echo $rows->title?></td> 
-						<td><?php echo $rows->code_name?></td>  
-						<td>
-							<?php if (isset($rows->img) && !empty($rows->img)): ?>
-								<img style="width:150px" src="<?php echo site_url()."assets/".$rows->img?>" />
-							<?php endif ?>
-							
-						</td>
+						<td><?php echo $rows->lat?></td>  
+						<td><?php echo $rows->lng?></td>  
 						<td>
 							<button class="btn btn-xs btn-primary" type="button" onclick="aHover('<?php echo $edit_url.$rows->id?>')" >更新</button>
 							<button class="btn btn-xs btn-danger del" type="button" onclick="dialog_chk('<?php echo $rows->id?>')">刪除</button>
@@ -122,7 +98,7 @@
 					{
 					?>
 						<tr>
-							<td colspan="7">No results.</td>
+							<td colspan="6">No results.</td>
 						</tr>
 					<?php
 					}
@@ -163,7 +139,7 @@
 		// 				        $("<option></option>").text(obj[i].code_name).val(obj[i].code_id)
 		// 				   );
 		// 				};
-		// 			 	$("#type").val('<?php echo $search_type ?>');  
+		// 			 	 
 	 //                }
 		// 		});
 		// });

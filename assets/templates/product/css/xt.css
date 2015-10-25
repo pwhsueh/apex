@@ -262,8 +262,9 @@ p {
 }
  @media all and (orientation: portrait) {
 h1 {
-	font-size: 7vh;
-	line-height: 8vh;
+	
+    font-size: 7vh;
+	line-height: 6vh;
 }
 h2 {
 	font-size: 4.5vh;
@@ -279,9 +280,9 @@ p {
 #xt-p1-txt {
 	text-align: center;
 	z-index: 1;
-	width: 80%;
-	top: 3vh;
-	left: 10%;
+	width: 100%;
+	top: 7vh;
+	
 }
 #xt-p1-txt h2 {
 	font-size: 4.5vh;
@@ -399,6 +400,6 @@ p {
 	top: 15vh;
 }
 #xt-p7 img {
-	width: 100%;
-}
+	top: 130px;
+    width: 100%;
 }

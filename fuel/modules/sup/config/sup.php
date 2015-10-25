@@ -5,7 +5,7 @@
 |--------------------------------------------------------------------------
 */
 $config['nav']['sup'] = array(
-// 'sup/lists'		=> 'Support'
+'sup/lists'		=> 'Online Partner'
 	// 'sup/lists?type=640'		=> 'FAQ',
 	// 'sup/lists?type=641'		=> 'Download',
 	// 'sup/lists?type=642'		=> 'Video',
@@ -18,7 +18,7 @@ $config['crawleruse_db_table_settings'] = TRUE;
 // the cache folder to hold blog cache files
 $config['sup'] = 'sup';
 
-$config['tables']['mod_sup'] = 'mod_sup';
+$config['tables']['mod_partner'] = 'mod_partner';
 
 
 $config['sup_javascript'] = array(

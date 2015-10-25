@@ -20,15 +20,17 @@ class Series extends CI_Controller {
     		$device->products = array();
     	}
 
-    	$xt = new stdClass();
-	    $xt->id = 'xt';
-	    $xt->img = '/templates/img/apex/ich_1.png';
-	    array_push($device->products, $xt);
-
 	    $ich = new stdClass();
 	    $ich->id = 'ich';
-	    $ich->img = '/templates/img/apex/xt.png';
+	    $ich->img = '/templates/img/apex/ich_1.png';
 	    array_push($device->products, $ich);
+
+    	$xt = new stdClass();
+	    $xt->id = 'xt';
+	    $xt->img = '/templates/img/apex/xt.png';
+	    array_push($device->products, $xt);
+
+	  
 		 
 		$vars['device'] = $device;	
 		$vars['views'] = 'devices';		    

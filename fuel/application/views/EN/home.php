@@ -11,7 +11,8 @@
           
           <!-- SLIDE1  -->
           <li data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="<?php echo site_url().'assets/'.$value->img?>" data-delay="5000"  data-saveperformance="off"  data-title="醫療設備"> 
-            <img src="<?php echo site_url().'assets/'.$value->img?>"  alt="bg-for-slider2"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+            <a href="<?php echo $value->url ?>"><img src="<?php echo site_url().'assets/'.$value->img?>"  alt="bg-for-slider2"  
+              data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> </a>
             
             <!-- LAYER NR. 1 -->
             <div class="tp-caption twslidersmalltop customin" 

@@ -28,7 +28,7 @@
 <title>Apex</title>
 <meta name="keywords" content="關鍵字" />
 <meta name="description" content="描述" />
-<link rel="shortcut icon" href="img/favicon.ico"/>
+<link rel="shortcut icon" href="<?php echo site_url()?>assets/icon/favicon.png"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <meta property="og:site_name" content="FB title" />
 <meta property="og:description" content="FB描述" />
@@ -94,15 +94,17 @@
 <a id="scrollUp" title="Scroll to top"><i class="fa fa-chevron-up"></i></a> 
 <script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/jquery.form.min.js'></script> 
 <script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/owl.js'></script> 
-<script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/waves-script.js'></script> 
+<!--<script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/waves-script.js'></script> -->
 <script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/themewaves.js'></script> 
 <script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/smoothscroll.js'></script> 
 <script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/jquery.easy-pie-chart.js'></script> 
 <script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/Chart.min.js'></script> 
-<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?v=3.exp&#038;sensor=false&#038;ver=4.2.2'></script> 
+<!-- <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?v=3.exp&#038;sensor=false&#038;ver=4.2.2'></script>  -->
 <script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/jquery.parallax-1.1.3.js'></script> 
 <script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/jquery.jplayer.min.js'></script> 
-<script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/jquery.isotope.min.js'></script>
+<!--<script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/jquery.isotope.min.js'></script> -->
+<!-- <script src='http://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.13'></script>
+<script src='http://maplacejs.com/src/maplace-0.1.3.min.js'></script> -->
  <?php echo js($js); ?>
 </body>
 </html>

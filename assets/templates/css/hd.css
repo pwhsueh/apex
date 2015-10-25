@@ -458,3 +458,9 @@ background: #ffcc00;
 .service-custom .waves-container .col-md-12>.row:nth-child(even) {
 	margin: 0;
 }
+
+#gmap{
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+}

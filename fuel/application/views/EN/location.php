@@ -1,40 +1,40 @@
- <style>
+ <<style>
 #search input[type="text"] {
-	border: 0 none;
-	font: bold 12px Arial, Helvetica, Sans-serif;
-	color: #d7d7d7;
-	width: 150px;
-	padding: 6px 15px 6px 35px;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
-	border-radius: 20px;
-	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
-	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
-	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
-	-webkit-transition: all 0.7s ease 0s;
-	-moz-transition: all 0.7s ease 0s;
-	-o-transition: all 0.7s ease 0s;
-	transition: all 0.7s ease 0s;
-	background-color: #444;
-	background-image: url(img/search-white.png);
-	background-repeat: no-repeat;
-	background-position: 10px 6px;
+  border: 0 none;
+  font: bold 12px Arial, Helvetica, Sans-serif;
+  color: #d7d7d7;
+  width: 150px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+  background-color: #444;
+  background-image: url(<?php echo site_url()?>assets/templates/img/search-white.png);
+  background-repeat: no-repeat;
+  background-position: 10px 6px;
 }
 #search input[type="text"]:focus {
-	background: url(img/search-dark.png) no-repeat 10px 6px #fcfcfc;
-	color: #6a6f75;
-	width: 200px;
-	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
-	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
-	text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  background: url(<?php echo site_url()?>assets/templates/img/search-dark.png) no-repeat 10px 6px #fcfcfc;
+  color: #6a6f75;
+  width: 200px;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 </style>
-  <!-- Start Main -->
+
+ <!-- Start Main -->
   <section id="main">
     <div id="page" style="margin:0 auto;">
-      
       <div id="portfolio" class="row-container light bg-scroll" style="background-color:#fff;">
         <div class="waves-container" style="max-width:1500px; margin:0 auto;">
           <div class="row">
@@ -49,23 +49,20 @@
 
                   <div class="row">
                     <div class="isotope-container ajax-single" data-column="4">
-
-                      <?php if (isset($resultsDealer)): ?>
-               			<?php foreach ($resultsDealer as $key => $value): ?>
-               				<article class="portfolio vertical not-inited class-a">
-		                        <div class="portfolio-thumb"><a href="<?php echo $value->url ?>" target="_blank";>
-		                        	<img src="<?php echo site_url().'assets/'.$value->img ?>" alt="Tuner"/></a>
-		                        </div>
-		                    </article>
-               			<?php endforeach ?>
-               		    <?php endif ?>	
-                      
-                     
+                           <?php if (isset($resultsDealer)): ?>
+                    <?php foreach ($resultsDealer as $key => $value): ?>
+                      <article class="portfolio vertical not-inited class-a">
+                            <div class="portfolio-thumb"><a href="<?php echo $value->url ?>" target="_blank";>
+                              <img src="<?php echo site_url().'assets/'.$value->img ?>" alt="Tuner"/></a>
+                            </div>
+                        </article>
+                    <?php endforeach ?>
+                      <?php endif ?>  
                     </div>
                   </div>
                 </div>
               </div>
-                                <div class="row">
+                  <div class="row">
                     <div class="tw-element waves-heading center col-md-12" style="" >
                       <div class="heading-container">
                         <h3 class="heading-title">Online Partners</h3>
@@ -82,34 +79,64 @@
             <div style="margin-top:-60px"></div>
             <div class="col-md-12 ">
               <div class="row">
+
+
+
+
+
+
+
                 <div class="col-md-4 map_menu">
+
+
                   <ul>
+
+
                     <li>
-                      <form method="get" action="/search" id="search">
-                        <input name="q" type="text" size="40" placeholder="搜尋" />
+                      <form method="post" action="<?php echo site_url()?>EN/search_partner" id="search" style="text-align: center;">
+                          <input id="address" name="search_keyword" type="text" size="40" value="<?php echo $search_keyword ?>"/>
+                          <input name="search" type="submit" value="Search"   />
                       </form>
                     </li>
-                   	<?php if (isset($resultsParter)): ?>
-               			<?php foreach ($resultsParter as $key => $value): ?>
-               				<li>
-	               				<?php echo htmlspecialchars_decode($value->content) ?>
-	               			</li>
-               			<?php endforeach ?>
-               		<?php endif ?>	
+
+
+                    <li>   
+
+                    <?php if (isset($resultsParter)): ?>
+                    <?php foreach ($resultsParter as $key => $value): ?>
+                        <span class="loc_link">
+                        <a href="javascript:void(0);" data-lat="<?php echo $value->lat ?>" data-long="<?php echo $value->lng ?>" data-title="<?php echo $value->title ?>" 
+                          data-html="<?php echo $value->title ?><br/><?php echo $value->address1 ?><br/><?php echo $value->address2 ?><br/>Tel:<?php echo $value->tel ?>"><?php echo $value->title ?></a>
+                        <p><?php echo $value->address1 ?></p>
+                        <p><?php echo $value->address2 ?></p>
+                        <p>Tel:<?php echo $value->tel ?></p>
+                        </span> 
+                    <?php endforeach ?>
+                    <?php endif ?>  
+
+                   </li>
+ 
+ 
                   </ul>
                 </div>
-                <div class="tw-element  col-md-8" style="" >
-                  <div class="waves-map styled waves-full-element" data-style="" data-mouse="false" data-lat="39.346046" data-lng="-84.330363" data-zoom="17" data-administrativecolor="#646464" data-landscapecolor="#FFF" data-poicolor="#d0d0d0" data-roadcolor="#ffffff" data-transitcolor="#c4c4c4" data-watercolor="#c5c5c5" style="height:500px;">
-                    <div class="map"></div>
-                    <div class="map-markers">
-                      <div class="map-marker" data-title="APEX" data-lat="39.346046" data-lng="-84.330363" data-iconsrc="<?php echo site_url()?>assets/templates/img/map-marker1.png" data-iconwidth="221" data-iconheight="92">
-                        <h2 style="color:#333">APEX</h2>
-                        <div class="marker-content">
-                          <p style="color:#333">Reading Rd Mason, OH 45040</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
+
+
+
+
+
+                <div class="tw-element col-md-8" style="" >
+
+
+
+<div class="waves-map styled waves-full-element">
+
+
+    <div id="gmap"></div>
+
+</div>
+
+
                 </div>
               </div>
             </div>
@@ -120,6 +147,10 @@
     </div>
   </section>
   <!-- End Main -->
+  <script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/waves-script.js'></script> 
+  <script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/jquery.isotope.min.js'></script> 
+<script src='http://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.13'></script>
+<script src='http://maplacejs.com/src/maplace-0.1.3.min.js'></script>
 <!-- <div id="main">
 <section id="onlinelist">
 <h1 class="titelh1">Online Shop</h1>

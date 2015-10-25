@@ -25,6 +25,7 @@
     <meta charset="utf-8"/>
     <title>APEX USA</title>
     <meta http-equiv="cleartype" content="on"/>
+<link rel="shortcut icon" href="<?php echo site_url()?>assets/icon/favicon.png"/>
 
     <!-- Always force latest IE rendering engine & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
