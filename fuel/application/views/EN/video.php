@@ -26,6 +26,9 @@
                   <ul style="padding:0 40px; margin:0">
                     <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/NnxB8uSfHEA" frameborder="0" allowfullscreen></iframe> -->
                     <?php echo htmlspecialchars_decode($value->content) ?>
+                    <video width="560" height="315" controls>
+                      <source src="<?php echo  $file_path.$value->file ?>" type="video/mp4">
+                    </video>
                     <h2 style="color:#333;"><?php echo $value->title ?></h2>
                     <p><?php echo dateconvert($value->date,'M d,Y') ?></p>
                   </ul>

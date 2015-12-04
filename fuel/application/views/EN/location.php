@@ -147,8 +147,8 @@
     </div>
   </section>
   <!-- End Main -->
-  <script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/waves-script.js'></script> 
-  <script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/jquery.isotope.min.js'></script> 
+  <!--<script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/waves-script_l.js'></script> 
+  <script type='text/javascript' src='<?php echo site_url()?>assets/templates/js/jquery.isotope.min.js'></script> -->
 <script src='http://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.13'></script>
 <script src='http://maplacejs.com/src/maplace-0.1.3.min.js'></script>
 <!-- <div id="main">

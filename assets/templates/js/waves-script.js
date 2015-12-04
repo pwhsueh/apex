@@ -87,10 +87,6 @@ jQuery(window).resize(function(){
     //-------
     headerMTS();
 });
-
-
-
-
 jQuery(document).ready(function($){
     "use strict";
     jQuery(document).bind('keydown', function (e){
@@ -333,201 +329,143 @@ jQuery(document).ready(function($){
             $curr.css('opacity', '');
         }
     });
-
-
- // googlemap - hd_style
-
-
-var map;
-var LocA = [{
-        lat: 29.62,
-        lon: -95.55,
-        title: 'Bangalore',
-        html: 'cpap.com<br/>10101 Stafford Centre Dr. Suite<br/>Stafford, Texas 77477<br/>Tel:800-356-5221',
-        zoom: 14,
-        icon: 'http://maps.google.com/mapfiles/markerA.png',
-        animation: google.maps.Animation.DROP
-    }];
- 
- map = new Maplace({
-    locations: LocA,
-    map_div: '#gmap',
-    generate_controls: false,
-    start: 0   
-  }).Load();
-  
-
-$(".loc_link").click(function(){
-  var newLoc = [{
-        lat: $('a',this).data('lat'),
-        lon: $('a',this).data('long'),
-        title: $('a',this).data('title'),
-        html: $('a',this).data('html'),
-        zoom: 14,
-//        icon: 'http://maps.google.com/mapfiles/marker'+$(this).text()+'.png',
-        icon: 'http://maps.google.com/mapfiles/markerA.png',
-        animation:google.maps.Animation.DROP
-    }];
-  map.AddLocations(newLoc).Load();
-  map.ViewOnMap($(this).index()+1);
-});
-
-
-
-
     jQuery(window).resize();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 jQuery(window).load(function() {
     "use strict";
     /* Google Map Style */
-//    jQuery('.waves-map.styled').each(function(i){
-//        var $currMap=jQuery(this);
-//        var $currMapStyle=$currMap.data('style');
-//        var $currMapMouse=$currMap.data('mouse');
-//        var $currMapLat=$currMap.data('lat');
-//        var $currMapLng=$currMap.data('lng');
-//        var $currMapZoom=$currMap.data('zoom');
-//        var $currMapAdministrativeColor=$currMap.data('administrativecolor');
-//        var $currMapLandscapeColor=$currMap.data('landscapecolor');
-//        var $currMapPoiColor=$currMap.data('poicolor');
-//        var $currMapRoadColor=$currMap.data('roadcolor');
-//        var $currMapTransitColor=$currMap.data('transitcolor');
-//        var $currMapWaterColor=$currMap.data('watercolor');
-//        var $currMapArea=$currMap.children('.map').attr('id','waves-map-styled-'+i);
-//        
-//        var $map;
-//        var $center = new google.maps.LatLng($currMapLat,$currMapLng);
-//        var MY_MAPTYPE_ID = 'custom_style_'+i;
-//        $map = new google.maps.Map(
-//            document.getElementById('waves-map-styled-'+i),
-//            {
-//                zoom: $currMapZoom,
-//                center: $center,
-//                mapTypeControlOptions:{
-//                    mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
-//                },
-//                mapTypeId: MY_MAPTYPE_ID
-//            }
-//        );
-//        $map.setOptions({scrollwheel:$currMapMouse});
-//        var $featureOpts = [];
-//        //administrative
-//        if($currMapAdministrativeColor){
-//            $featureOpts.push({
-//                featureType: 'administrative',
-//                elementType: "geometry",
-//                stylers: [
-//                    { color: $currMapAdministrativeColor }
-//                ]
-//            });
-//        }
-//        //landscape
-//        if($currMapLandscapeColor){
-//            $featureOpts.push({
-//                featureType: 'landscape',
-//                elementType: "geometry",
-//                stylers: [
-//                    { color: $currMapLandscapeColor}
-//                ]
-//            });
-//        }
-//        //poi
-//        if($currMapPoiColor){
-//            $featureOpts.push({
-//                featureType: 'poi',
-//                elementType: "geometry",
-//                stylers: [
-//                    { color: $currMapPoiColor}
-//                ]
-//            });
-//        }
-//        //road
-//        if($currMapRoadColor){
-//            $featureOpts.push({
-//                featureType: 'road',
-//                elementType: "geometry",
-//                stylers: [
-//                    { color: $currMapRoadColor}
-//                ]
-//            });
-//        }
-//        //transit
-//        if($currMapTransitColor){
-//            $featureOpts.push({
-//                featureType: 'transit',
-//                elementType: "geometry",
-//                stylers: [
-//                    { color: $currMapTransitColor}
-//                ]
-//            });
-//        }
-//        //water
-//        if($currMapWaterColor){
-//            $featureOpts.push({
-//                featureType: 'water',
-//                elementType: "geometry",
-//                stylers: [
-//                    { color: $currMapWaterColor}
-//                ]
-//            });
-//        }
-//        $map.mapTypes.set(MY_MAPTYPE_ID, new google.maps.StyledMapType($featureOpts,{name: $currMapStyle}));
-//        // markers
-//        $currMap.waypoint(function() {
-//            $currMapArea.siblings('.map-markers').children('.map-marker').each(function(j){
-//                var $currMar=jQuery(this);
-//                var $currMarTitle=$currMar.data('title');
-//                var $currMarLat=$currMar.data('lat');
-//                var $currMarLng=$currMar.data('lng');
-//                var $currMarIconSrc=$currMar.data('iconsrc');
-//                var $currMarIconWidth=$currMar.data('iconwidth');
-//                var $currMarIconHeight=$currMar.data('iconheight');
-//
-//                var markerOp={
-//                    position: new google.maps.LatLng($currMarLat,$currMarLng),
-//                    map: $map,
-//                    title: $currMarTitle,
-//                    animation: google.maps.Animation.DROP,
-//                    zIndex: j
-//                };
-//                if($currMarIconSrc&&$currMarIconWidth&&$currMarIconHeight){
-//                    markerOp.icon={
-//                        url: $currMarIconSrc,
-//                        size: new google.maps.Size($currMarIconWidth, $currMarIconHeight),
-//                        origin: new google.maps.Point(0,0),
-//                        anchor: new google.maps.Point(parseInt($currMarIconWidth,10)/2,$currMarIconHeight)
-//                    };
-//                }
-//                setTimeout(function() {
-//                    var marker = new google.maps.Marker(markerOp);
-//                    var infowindow = new google.maps.InfoWindow({content: $currMar.html()});
-//                    google.maps.event.addListener(marker, 'click', function() {
-//                        if(infowindow.getMap()){
-//                            infowindow.close();
-//                        }else{
-//                            infowindow.open($map,marker);
-//                        }
-//                    });
-//                }, j * 300);
-//            });
-//        }, {triggerOnce: true, offset: 'bottom-in-view'});
-//    });
+    jQuery('.waves-map.styled').each(function(i){
+        var $currMap=jQuery(this);
+        var $currMapStyle=$currMap.data('style');
+        var $currMapMouse=$currMap.data('mouse');
+        var $currMapLat=$currMap.data('lat');
+        var $currMapLng=$currMap.data('lng');
+        var $currMapZoom=$currMap.data('zoom');
+        var $currMapAdministrativeColor=$currMap.data('administrativecolor');
+        var $currMapLandscapeColor=$currMap.data('landscapecolor');
+        var $currMapPoiColor=$currMap.data('poicolor');
+        var $currMapRoadColor=$currMap.data('roadcolor');
+        var $currMapTransitColor=$currMap.data('transitcolor');
+        var $currMapWaterColor=$currMap.data('watercolor');
+        var $currMapArea=$currMap.children('.map').attr('id','waves-map-styled-'+i);
+        
+        var $map;
+        var $center = new google.maps.LatLng($currMapLat,$currMapLng);
+        var MY_MAPTYPE_ID = 'custom_style_'+i;
+        $map = new google.maps.Map(
+            document.getElementById('waves-map-styled-'+i),
+            {
+                zoom: $currMapZoom,
+                center: $center,
+                mapTypeControlOptions:{
+                    mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+                },
+                mapTypeId: MY_MAPTYPE_ID
+            }
+        );
+        $map.setOptions({scrollwheel:$currMapMouse});
+        var $featureOpts = [];
+        //administrative
+        if($currMapAdministrativeColor){
+            $featureOpts.push({
+                featureType: 'administrative',
+                elementType: "geometry",
+                stylers: [
+                    { color: $currMapAdministrativeColor }
+                ]
+            });
+        }
+        //landscape
+        if($currMapLandscapeColor){
+            $featureOpts.push({
+                featureType: 'landscape',
+                elementType: "geometry",
+                stylers: [
+                    { color: $currMapLandscapeColor}
+                ]
+            });
+        }
+        //poi
+        if($currMapPoiColor){
+            $featureOpts.push({
+                featureType: 'poi',
+                elementType: "geometry",
+                stylers: [
+                    { color: $currMapPoiColor}
+                ]
+            });
+        }
+        //road
+        if($currMapRoadColor){
+            $featureOpts.push({
+                featureType: 'road',
+                elementType: "geometry",
+                stylers: [
+                    { color: $currMapRoadColor}
+                ]
+            });
+        }
+        //transit
+        if($currMapTransitColor){
+            $featureOpts.push({
+                featureType: 'transit',
+                elementType: "geometry",
+                stylers: [
+                    { color: $currMapTransitColor}
+                ]
+            });
+        }
+        //water
+        if($currMapWaterColor){
+            $featureOpts.push({
+                featureType: 'water',
+                elementType: "geometry",
+                stylers: [
+                    { color: $currMapWaterColor}
+                ]
+            });
+        }
+        $map.mapTypes.set(MY_MAPTYPE_ID, new google.maps.StyledMapType($featureOpts,{name: $currMapStyle}));
+        // markers
+        $currMap.waypoint(function() {
+            $currMapArea.siblings('.map-markers').children('.map-marker').each(function(j){
+                var $currMar=jQuery(this);
+                var $currMarTitle=$currMar.data('title');
+                var $currMarLat=$currMar.data('lat');
+                var $currMarLng=$currMar.data('lng');
+                var $currMarIconSrc=$currMar.data('iconsrc');
+                var $currMarIconWidth=$currMar.data('iconwidth');
+                var $currMarIconHeight=$currMar.data('iconheight');
+
+                var markerOp={
+                    position: new google.maps.LatLng($currMarLat,$currMarLng),
+                    map: $map,
+                    title: $currMarTitle,
+                    animation: google.maps.Animation.DROP,
+                    zIndex: j
+                };
+                if($currMarIconSrc&&$currMarIconWidth&&$currMarIconHeight){
+                    markerOp.icon={
+                        url: $currMarIconSrc,
+                        size: new google.maps.Size($currMarIconWidth, $currMarIconHeight),
+                        origin: new google.maps.Point(0,0),
+                        anchor: new google.maps.Point(parseInt($currMarIconWidth,10)/2,$currMarIconHeight)
+                    };
+                }
+                setTimeout(function() {
+                    var marker = new google.maps.Marker(markerOp);
+                    var infowindow = new google.maps.InfoWindow({content: $currMar.html()});
+                    google.maps.event.addListener(marker, 'click', function() {
+                        if(infowindow.getMap()){
+                            infowindow.close();
+                        }else{
+                            infowindow.open($map,marker);
+                        }
+                    });
+                }, j * 300);
+            });
+        }, {triggerOnce: true, offset: 'bottom-in-view'});
+    });
     //----------------------------Initial Functions-----------------------------------------------
     wavesReInit(jQuery('#theme-layout'));
     waves_carousel();
@@ -1001,13 +939,3 @@ function scrollTopItem($currItem){
     }
     jQuery("html, body").animate({scrollTop: $scrollTo}, 500);
 }
-
-
-
-
-
-
-
-
-
-

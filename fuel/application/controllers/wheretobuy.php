@@ -22,6 +22,7 @@ class Wheretobuy extends CI_Controller {
 		$vars['resultsDealer'] = $resultsDealer;	
 		$vars['resultsParter'] = $resultsParter;
 		$vars['search_keyword'] = '';
+		$vars['islocation'] = 'y';	
 
 		$this->fuel->pages->render("index", $vars);
 	}
@@ -40,6 +41,7 @@ class Wheretobuy extends CI_Controller {
 		$vars['feature_photo'] = $this->code_model->get_feature_photo('Promotion_photo');
 		$vars['views'] = 'promotion';	
 		$vars['menu'] = 'wheretobuy';	
+		$vars['islocation'] = 'y';	
 
 		// $vars['css'] = site_url()."assets/templates/css/promotion.css"; 
 		$vars['results'] = $results;
@@ -65,6 +67,7 @@ class Wheretobuy extends CI_Controller {
 		$vars['resultsDealer'] = $resultsDealer;	
 		$vars['resultsParter'] = $resultsParter;	
 		$vars['search_keyword'] = $search_keyword;
+		$vars['islocation'] = 'y';	
 
 		$this->fuel->pages->render("index", $vars);
 	}

@@ -22,6 +22,7 @@
 						Lang
 					</label>
 				    <div class="col-sm-8">
+				    	<input type="hidden" name="type" value="<?php echo $type ?>" />
 				       <select name="search_lang">
 							<?php
 								if(isset($lang)):

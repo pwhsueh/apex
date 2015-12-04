@@ -169,12 +169,12 @@
                             <?php for ($i=0; $i < sizeof($resultsCatalogue) ; $i+=3): ?>
                             <div class="col-md-4 ">
                                 <ul style="margin-left:0;">
-                                  <li style="margin-bottom:20px;"><a href="<?php echo $resultsCatalogue[$i]->url ?>" download><?php echo $resultsCatalogue[$i]->title ?><i class="fa fa-download"></i></a></li>
+                                  <li style="margin-bottom:20px;"><a target="_BLANK" href="<?php echo site_url().'assets/'.$resultsCatalogue[$i]->file ?>" download><?php echo $resultsCatalogue[$i]->title ?><i class="fa fa-download"></i></a></li>
                                   <?php if ($i+1<sizeof($resultsCatalogue)): ?>
-                                      <li style="margin-bottom:20px;"><a href="<?php echo $resultsCatalogue[$i+1]->url ?>" download><?php echo $resultsCatalogue[$i+1]->title ?><i class="fa fa-download"></i></a></li>
+                                      <li style="margin-bottom:20px;"><a target="_BLANK" href="<?php echo site_url().'assets/'.$resultsCatalogue[$i+1]->file ?>" download><?php echo $resultsCatalogue[$i+1]->title ?><i class="fa fa-download"></i></a></li>
                                   <?php endif ?>
                                    <?php if ($i+2<sizeof($resultsCatalogue)): ?>
-                                      <li style="margin-bottom:20px;"><a href="<?php echo $resultsCatalogue[$i+2]->url ?>" download><?php echo $resultsCatalogue[$i+2]->title ?><i class="fa fa-download"></i></a></li>
+                                      <li style="margin-bottom:20px;"><a target="_BLANK" href="<?php echo site_url().'assets/'.$resultsCatalogue[$i+2]->file ?>" download><?php echo $resultsCatalogue[$i+2]->title ?><i class="fa fa-download"></i></a></li>
                                   <?php endif ?>
                                 </ul>
                             </div>
@@ -195,12 +195,12 @@
                             <?php for ($i=0; $i < sizeof($resultsManual) ; $i+=3): ?>
                             <div class="col-md-4 ">
                                 <ul style="margin-left:0;">
-                                  <li style="margin-bottom:20px;"><a href="<?php echo $resultsManual[$i]->url ?>" download><?php echo $resultsManual[$i]->title ?><i class="fa fa-download"></i></a></li>
+                                  <li style="margin-bottom:20px;"><a href="<?php echo site_url().'assets/'.$resultsManual[$i]->file ?>" download><?php echo $resultsManual[$i]->title ?><i class="fa fa-download"></i></a></li>
                                   <?php if ($i+1<sizeof($resultsManual)): ?>
-                                      <li style="margin-bottom:20px;"><a href="<?php echo $resultsManual[$i+1]->url ?>" download><?php echo $resultsManual[$i+1]->title ?><i class="fa fa-download"></i></a></li>
+                                      <li style="margin-bottom:20px;"><a href="<?php echo site_url().'assets/'.$resultsManual[$i+1]->file ?>" download><?php echo $resultsManual[$i+1]->title ?><i class="fa fa-download"></i></a></li>
                                   <?php endif ?>
                                    <?php if ($i+2<sizeof($resultsManual)): ?>
-                                      <li style="margin-bottom:20px;"><a href="<?php echo $resultsManual[$i+2]->url ?>" download><?php echo $resultsManual[$i+2]->title ?><i class="fa fa-download"></i></a></li>
+                                      <li style="margin-bottom:20px;"><a href="<?php echo site_url().'assets/'.$resultsManual[$i+2]->file ?>" download><?php echo $resultsManual[$i+2]->title ?><i class="fa fa-download"></i></a></li>
                                   <?php endif ?>
                                 </ul>
                             </div>
@@ -219,12 +219,12 @@
                             <?php for ($i=0; $i < sizeof($resultsSoftware) ; $i+=3): ?>
                             <div class="col-md-4 ">
                                 <ul style="margin-left:0;">
-                                  <li style="margin-bottom:20px;"><a href="<?php echo $resultsSoftware[$i]->url ?>" download><?php echo $resultsSoftware[$i]->title ?><i class="fa fa-download"></i></a></li>
+                                  <li style="margin-bottom:20px;"><a href="<?php echo site_url().'assets/'.$resultsSoftware[$i]->file ?>" download><?php echo $resultsSoftware[$i]->title ?><i class="fa fa-download"></i></a></li>
                                   <?php if ($i+1<sizeof($resultsSoftware)): ?>
-                                      <li style="margin-bottom:20px;"><a href="<?php echo $resultsSoftware[$i+1]->url ?>" download><?php echo $resultsSoftware[$i+1]->title ?><i class="fa fa-download"></i></a></li>
+                                      <li style="margin-bottom:20px;"><a href="<?php echo site_url().'assets/'.$resultsSoftware[$i+1]->file ?>" download><?php echo $resultsSoftware[$i+1]->title ?><i class="fa fa-download"></i></a></li>
                                   <?php endif ?>
                                    <?php if ($i+2<sizeof($resultsSoftware)): ?>
-                                      <li style="margin-bottom:20px;"><a href="<?php echo $resultsSoftware[$i+2]->url ?>" download><?php echo $resultsSoftware[$i+2]->title ?><i class="fa fa-download"></i></a></li>
+                                      <li style="margin-bottom:20px;"><a href="<?php echo site_url().'assets/'.$resultsSoftware[$i+2]->file ?>" download><?php echo $resultsSoftware[$i+2]->title ?><i class="fa fa-download"></i></a></li>
                                   <?php endif ?>
                                 </ul>
                             </div>

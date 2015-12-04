@@ -220,7 +220,8 @@ class Support extends CI_Controller {
 		$vars['lang_code'] = $lang_code;	
 		$vars['dataStart'] = $dataStart+1;
 		$vars['views'] = 'video';
-		$vars['menu'] = 'support';		    
+		$vars['menu'] = 'support';		 
+		$vars['file_path'] = base_url()."assets/";   
 		// $vars['css'] = site_url()."assets/templates/css/video.css"; 
 		// $vars['css2'] = site_url()."assets/templates/css/video-js.css"; 
 		$vars['js'] = site_url()."assets/templates/js/video.js"; 
@@ -250,7 +251,8 @@ class Support extends CI_Controller {
 		$vars['lang_code'] = $lang_code;	
 		$vars['dataStart'] = $dataStart+1;
 		$vars['views'] = 'promotion';	
-		$vars['menu'] = 'wheretobuy';	    
+		$vars['menu'] = 'wheretobuy';
+
 		// $vars['css'] = site_url()."assets/templates/css/promotion.css"; 
 		$vars['results'] = $results;
 		$vars['page_jump'] = $this->pagination->create_links();

@@ -139,7 +139,7 @@
           <?php endforeach ?>
             </ul>
           </li>
-          <li><a href="mask.html">Masks</a>
+          <li><a href="<?php echo site_url() ?>EN/masks">Masks</a>
             <ul class="sub-menu">
               <?php if (isset($mask_menu)): ?>
                  

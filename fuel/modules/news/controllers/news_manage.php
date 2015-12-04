@@ -22,7 +22,8 @@ class News_manage extends Fuel_base_controller {
 	{
 		$base_url = base_url();
 
-		$search_type = $type = $this->input->get_post('type'); 
+		$search_type = $this->input->get_post('type'); 
+		$type = $this->input->get_post('type'); 
 		$search_lang = $this->input->get_post('search_lang'); 
 		$cate = $this->input->get_post('cate'); 
 		
@@ -43,6 +44,9 @@ class News_manage extends Fuel_base_controller {
 			$search_lang = $this->session->userdata('search_lang'); 
 			$filter .= " AND lang = '$search_lang'";
 		} 
+
+		// echo $type;
+		// echo $search_type;
 
 		// print_r($filter);
 

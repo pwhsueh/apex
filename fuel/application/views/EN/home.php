@@ -156,7 +156,8 @@
 
             </script> 
     </div>
-    <!-- END REVOLUTION SLIDER --> </div>  
+    <!-- END REVOLUTION SLIDER --> 
+</div>  
   <section id="main">
     <div id="page" style="margin:0 auto;">
       <div id="portfolio" class="row-container light bg-scroll" style="background-color:#fff;">
